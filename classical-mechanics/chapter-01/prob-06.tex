@@ -1,0 +1,57 @@
+A particle moves in the xy plane under the constraint that its velocity
+vector is always directed towards a point on the $x$ axis whose
+x-coordinate is some given function of time $f(t)$.  Show that for
+$f(t)$ differentiable, but otherwise abirtrary, the constraint is
+nonholonomic.
+
+\subsection*{Solution}
+
+Let $\radius = [x, y]$ be the position of the particle and $\velocity
+= [\dot{x}, \dot{y}]$ be its velocity. We have that the velocity must
+always be parallel to $[x - f(t), y]$, which gives us
+\[ \dotprod{\velocity}{[-y, x - f(t)]} = 0 \]
+Thus
+\begin{align*}
+\dot{y}(x - f(t)) - \dot{x}y &= 0 \\
+(x - f(t))dy - ydx &= 0
+\end{align*}
+This gives us a constrant system as in Derivation~\ref{rollingdisk}, where
+\begin{align*}
+  g_x(x, y, f(t)) &= y \\
+  g_y(x, y, f(t)) &= x - f(t) \\
+  g_{f(t)}(x, y, f(t)) &= 0
+\end{align*}
+We need to find $h(x, y, f(t))$ such that for all $i \neq j \in \{x,
+y, \theta, \phi\}$,
+\[\partderivop{x_j}hg_i = \partderivop{x_i}hg_j\]
+Examining all possibilities gives three equations
+\begin{align*}
+  \partderivop{x}h(x - f(t)) &= \partderivop{y}hy \\
+  \partderivop{f(t)}h(x - f(t)) &= 0 \\
+  \partderivop{f(t)}hy &= 0 \\
+\end{align*}
+The only non-constant derivative is
+\[\partderivop{x}h(x - f(t)) = \partderivop{y}hy\]
+Rewrite this as
+\begin{align*}
+  \partderivop{x}h(x - f(t))
+  &=
+  \partderivop{y}hy \\
+  h\partderiv{x}{x} - h\partderivop{x}f(t) + (x - f(t))\partderiv{h}{x}
+  &=
+  h\partderiv{y}{y} + y\partderiv{h}{y} \\
+  (x - f(t))\partderiv{h}{x}
+  &=
+  y\partderiv{h}{y}
+\end{align*}
+To satisfy this, it must be true that $\partderiv{h}{y}$ contains an
+additive component of $f(t)$.  However, if we examine the third
+equation, we get
+\begin{align*}
+  \partderivop{f(t)}hy &= 0 \\
+  \partderiv{h}{f(t)} + \partderiv{y}{f(t)} &= 0 \\
+  \partderiv{h}{f(t)} &= 0
+\end{align*}
+which shows that $h$ \emph{cannot} contain such a term.  Therefore,
+there exists no satisfactory integrating factor, and thus the
+constraints are not holonomic.
