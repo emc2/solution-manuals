@@ -1,0 +1,55 @@
+% Math symbols
+
+\newcommand{\nats}{\ensuremath{\mathbb{N}}}
+\newcommand{\ints}{\ensuremath{\mathbb{Z}}}
+\newcommand{\rats}{\ensuremath{\mathbb{Q}}}
+\newcommand{\reals}{\ensuremath{\mathbb{R}}}
+\newcommand{\complex}{\ensuremath{\mathbb{C}}}
+
+% Derivatives
+
+\newcommand{\deriv}[2]{\ensuremath{\frac{d #1}{d #2}}}
+\newcommand{\secondderiv}[2]{\ensuremath{\frac{d^2 #1}{d #2^2}}}
+\newcommand{\partderiv}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+\newcommand{\secondcrossderiv}[3]{\ensuremath{\frac{\partial^2 #1}{\partial #2\partial #3}}}
+\newcommand{\derivop}[1]{\ensuremath{\frac{d}{d #1}}}
+\newcommand{\secondderivop}[1]{\ensuremath{\frac{d^2}{d #1^2}}}
+\newcommand{\partderivop}[1]{\ensuremath{\frac{\partial}{\partial #1}}}
+\newcommand{\secondcrossderivop}[2]{\ensuremath{\frac{\partial^2}{\partial #1\partial #2}}}
+
+% Vector Calculus
+
+\newcommand{\physvec}[1]{\ensuremath{{\bf #1}}}
+\newcommand{\normvec}[1]{\ensuremath{{\bf \hat{#1}}}}
+\newcommand{\dotprod}[2]{\ensuremath{#1 \cdot #2}}
+\newcommand{\crossprod}[2]{\ensuremath{#1 \times #2}}
+\newcommand{\magnitude}[1]{\ensuremath{|#1|}}
+\newcommand{\diverge}[1]{\ensuremath{\nabla \cdot #1}}
+\newcommand{\grad}[1]{\ensuremath{\nabla #1}}
+\newcommand{\partialgrad}[2]{\ensuremath{\nabla_{#1} #2}}
+\newcommand{\laplace}[1]{\ensuremath{\nabla^2 #1}}
+\newcommand{\partiallaplace}[2]{\ensuremath{\nabla^2_{#1} #2}}
+\newcommand{\directderiv}[2]{\ensuremath{#1 \cdot \nabla #2}}
+
+% Units
+
+\newcommand{\meter}{\ensuremath{\operatorname{m}}}
+\newcommand{\kilometer}{\ensuremath{\operatorname{km}}}
+\newcommand{\second}{\ensuremath{\operatorname{s}}}
+\newcommand{\kilogram}{\ensuremath{\operatorname{kg}}}
+\newcommand{\joule}{\ensuremath{\operatorname{J}}}
+\newcommand{\electronvolt}{\ensuremath{\operatorname{eV}}}
+\newcommand{\megaelectronvolt}{\ensuremath{\operatorname{MeV}}}
+
+% Dirac-style notation
+
+\newcommand{\trace}[1]{\ensuremath{\operatorname{Tr}(#1)}}
+\newcommand{\adjoint}[1]{\ensuremath{#1^{\dagger}}}
+\newcommand{\doubleadjoint}[1]{\ensuremath{#1^{\dagger\dagger}}}
+\newcommand{\ket}[1]{\ensuremath{\left|\,#1\,\right\rangle}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle\,#1\,\right|}}
+\newcommand{\innerprod}[2]{\ensuremath{\left\langle\,#1\,\middle|\,#2\,\right\rangle }}
+\newcommand{\innerprodop}[3]{\ensuremath{\left\langle\,#1\,\middle|\,#2\,\middle|\,#3\,\right\rangle }}
+%\newcommand{\outerprod}[2]{\ensuremath{\left| #1\middle\rangle\middle\langle #2\right|}}
+%\newcommand{\doubleouterprod}[4]{\ensuremath{\left| #1\middle\rangle\middle\langle #2\middle| #3\middle\rangle\middle\langle #4 \right\}
+\newcommand{\expectation}[1]{\ensuremath{\left\langle\,#1\,\right\rangle}}

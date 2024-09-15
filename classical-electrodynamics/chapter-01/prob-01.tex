@@ -1,0 +1,187 @@
+Use Gauss' theorem and
+\[
+\oint \physvec{E}\cdot d\physvec{l} = 0
+\]
+to prove the following:
+\begin{itemize}
+\item[(a)] Any excess charge placed on a conductor must lie entirely
+  on its surface.  (A conductor by definition contains charges
+  capable of moving freely under the action of applied electric
+  fields).
+\item[(b)] A closed, hollow conductor shields its interior from
+  fields due to charges outside, but does not shield its exterior
+  from the fields due to charges placed inside it.
+\item [(c)] The electric field at the surface of a conductor is
+  normal to the surface and has a magnitude of
+  $\chargedensity/\permittivity$, where $\chargedensity$ is the
+  charge density per unit area on the surface.
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{itemize}
+\item[(a)] In any system in equilibrium,for each component of the system,
+  the measure of work done by some spontaneous force acting on the
+  component $dW_s$ must equal the sum of the measure of work done by
+  the forces of constraint $dW_c$ and the change in energy $dE$ of the
+  component, giving
+  \[
+  dW_s = dW_c + dE
+  \]
+  If we consider on the component of the spontaneous force that acts
+  against the forces of constraint, then we have
+  \[
+  dW_s' = dW_c
+  \]
+  Since a conductor allows free motion of charges, the only
+  constraining forces from the $\elecfield$ field.  The work done
+  for some displacement from $x_1$ to $x_2$ is given by
+  \[
+  \int_{x_1}^{x_2} dW_c
+  =
+  \int_{x_1}^{x_2} \elecpotential dl
+  =
+  \elecpotential(x_2) - \elecpotential(x_1)
+  \]
+  Thus, we have
+  \[
+  \int_{x_1}^{x_2} dW_s = \elecpotential(x_2) - \elecpotential(x_1)
+  \]
+  Finally, by d'Alembert's principle of virtual work, $dW_s' = 0$ for any
+  system in equilibrium, so we have
+  \[
+  \elecpotential(x_2) - \elecpotential(x_1) = 0
+  \]
+  Since $x_1,x_2$ are arbitrary points inside the conductor, we
+  conclude that the potential within the conductor is some constant
+  $\phi_c$.  From the equation $\elecfield = \nabla\elecpotential$, we
+  then have
+  \[
+  \elecfield = \nabla\elecpotential = \nabla\phi_c = 0
+  \]
+  everywhere within the interior of the conductor.
+
+  Now, consider any surface $S$ confined to the interior of the
+  conductor.  By Gauss' law, we have that
+  \[
+  \frac{Q}{\permittivity} = \oint_S \elecfield \cdot dA
+  \]
+  But since $\elecfield = 0$ everywhere in the interior of the
+  conductor, we have
+  \[
+  Q = 0
+  \]
+  Since $S$ is any arbitrary surface contained within the conductor,
+  we therefore conclude that the charge within the whole interior must
+  be zero, and therefore that all charges are confined to the boundary.
+
+
+\item[(b)]
+
+  First, examine the case where the inner space (the space contained
+  by the conductor) contains no charges.  Then for any surface $S$
+  contained within the interior of the inner space, we have
+  \[
+  \oint_S \elecfield \cdot dA = \frac{Q}{\permittivity} = 0
+  \]
+  Thus, the total electric flux at any point in the inner space is
+  zero.  Now, consider a surface $S'$ in the interior of the
+  \emph{conductor} (which means it contains the inner space entirely).
+  Since the charges in a conductor are confined to the boundary, this
+  means that the total charge contained by $S'$ is equal to the charge
+  $Q_I$ of the inner boundary.  But since $\elecfield = 0$ everywhere
+  within a conductor's interior, and $S'$ is confined to the interior,
+  we have that
+  \[
+  \frac{Q_c}{\permittivity} = \oint_{S'} \elecfield \cdot dA = 0
+  \]
+  Thus, there are no charges on the interior boundary, and thus
+  nowhere within $S'$.  Since there are no charges within $S'$, the
+  electric field must be uniform throughout.  But since the portion of
+  $S'$ that lies within the conductor is known to have $\elecfield =
+  0$, then the electric field must be zero everywhere.
+
+  Now, place some charge $Q$ within the inner space, and consider some
+  surface $S$ such that the conductor's outer boundary is wholly
+  contained within $S$.  Then by Gauss' law, we have
+  \[
+  \oint_S \elecfield \cdot dA = \frac{Q}{\permittivity}
+  \]
+  which implies $\elecfield$ must be non-zero outside the conductor.
+
+\item[(c)]
+
+  Let $S$ be any surface that encloses an area of boundary having
+  total charge $Q$ and area $A$.  Then by Gauss' theorem, we have
+  \[
+  \oint_S \elecfield \cdot dA = \frac{Q}{\permittivity}
+  \]
+  We can replace $Q$ with a surface integral over the portion of the
+  boundary of the conductor $S_c$ contained by $S$, giving
+  \[
+  \oint_S \elecfield \cdot dA
+  =
+  \frac{1}{\permittivity}\int_{S_c}\chargedensity dA
+  \]
+  From this, we obtain that
+  \[
+  \elecfield\cdot\normvec{n} = \frac{\chargedensity}{\permittivity}
+  \]
+  where $\normvec{n}$.  Now, consider some contour $C$ that passes through
+  the interior of the conductor, then through the exterior, and back.
+  Split this into two parts
+  \[
+  \int_{C_I} \elecfield\cdot dl
+  \]
+  which passes through the interior of the conductor, and
+  \[
+  \int_{C_O} \elecfield\cdot dl
+  \]
+  which lies outside of the conductor.  Since $\elecfield = 0$ inside
+  the conductor, we have
+  \[
+  \int_{C_I} \elecfield\cdot dl = 0
+  \]
+  Since
+  \[
+  \oint_C \elecfield\cdot dl = 0
+  \]
+  and
+  \[
+  \oint_C \elecfield\cdot dl
+  =
+  \int_{C_I} \elecfield\cdot dl +
+  \int_{C_O} \elecfield\cdot dl
+  \]
+  then it must be true that
+  \[
+  \int_{C_O} \elecfield\cdot dl = 0
+  \]
+  For the component of $\elecfield$ in the direction of $\normvec{n}$,
+  rewrite this integral as
+  \[
+  \int_{x_1}^{x_2} \elecfield\cdot\normvec{n}dl
+  =
+  \elecpotential(x_2) - \elecpotential(x_1)
+  \]
+  But since the component of $\elecfield$ in the direction of
+  $\normvec{n}$ is uniform in the region of the contour, we have
+  \[
+  \elecpotential(x_2) = \elecpotential(x_1)
+  \]
+  and thus
+  \[
+  \int_{C_O} \elecfield\cdot\normvec{n}dl
+  =
+  0
+  \]
+  Now consider the component of $\elecfield$ orthogonal to $\normvec{n}$,
+  then for some contour, we will have that
+  \[
+  \int_{C_O} \elecfield\cdot dl
+  \neq
+  0
+  \]
+  Thus, $\elecfield$ must have no component orthogonal to $\normvec{n}$.
+
+\end{itemize}

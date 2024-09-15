@@ -1,0 +1,33 @@
+\documentclass{report}
+\usepackage{import}
+\usepackage{fullpage}
+\usepackage{MnSymbol}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\title{Classical Electrodynamics Solution Manual}
+\author{Eric L. McCorkle}
+
+\import{../}{common.tex}
+
+\newcommand{\permittivity}{\ensuremath{\epsilon}}
+\newcommand{\chargedensity}{\ensuremath{\sigma}}
+\newcommand{\elecfield}{\ensuremath{\physvec{E}}}
+\newcommand{\magfield}{\ensuremath{\physvec{B}}}
+\newcommand{\elecpotential}{\ensuremath{\physvec{\Phi}}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Introduction to Electrostatics}
+
+\import{./chapter-01}{chapter-01.tex}
+
+\end{document}
