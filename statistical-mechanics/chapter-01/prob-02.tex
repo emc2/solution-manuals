@@ -1,0 +1,37 @@
+Assuming that the entropy $S$ and the statistical number
+$\Omega$ of a physical system are related through an arbitrary
+functional form
+\[ S = f(\Omega)\]
+show that the additive character of $S$ and the multiplicative
+character of $\Omega$ \emph{necessarily} require that the function
+$f(\Omega)$ be of the form
+\[ S = k\ln\Omega \]
+
+\subsection*{Solution}
+
+For a system $A$ consisting of two subsystems $A_1$ and $A_2$, where a
+given macrostate of $A$ implies that $A_1$ and $A_2$ are each in a
+specific macrostate.  Then the number $\Omega$ of microstates of $A$
+corresponding to this macrostate must equal the product of the number
+$\Omega_1$ of microstates of $A_1$ and $\Omega_2$ of microstates of
+$A_2$ corresponding to each system's macrostate.
+
+Now, the quantity $S$ for a system $A$ is equal to the \emph{sum} of
+the $S_i$ for each of the composite systems of $A$.  If $S$ is related
+to $\Omega$ by some function $f$ as
+\[ S = f(\Omega) \]
+Then we have that
+\[ S_1 + S_2 = f(\Omega_1) + f(\Omega_2) \]
+We also have
+\[ S = f(\Omega_1\Omega_2) \]
+Putting these together, we get
+\[ f(\Omega_1\Omega_2) = f(\Omega_1) + f(\Omega_2) \]
+This is satisfied by a logarithm of some arbitrary base $b$
+\[ \log_b(\Omega_1\Omega_2) = \log_b(\Omega_1) + \log_b(\Omega_2) \]
+thus we have
+\[ f(\Omega) = \log_b(\Omega) \]
+we can then apply the log change-of-base formula to set this to the
+natural log
+\[ f(\Omega) = \frac{\ln(\Omega)}{\ln b} \]
+We can then set $k = \frac{1}{\ln b}$ to get
+\[ f(\Omega) = k\ln(\Omega) \]
