@@ -20,7 +20,7 @@ to prove the following:
 \subsection*{Solution}
 
 \begin{itemize}
-\item[(a)] In any system in equilibrium,for each component of the system,
+\item[(a)] In any system in equilibrium, for each component of the system,
   the measure of work done by some spontaneous force acting on the
   component $dW_s$ must equal the sum of the measure of work done by
   the forces of constraint $dW_c$ and the change in energy $dE$ of the
@@ -28,13 +28,13 @@ to prove the following:
   \[
   dW_s = dW_c + dE
   \]
-  If we consider on the component of the spontaneous force that acts
+  If we consider only the component of the spontaneous force that acts
   against the forces of constraint, then we have
   \[
   dW_s' = dW_c
   \]
   Since a conductor allows free motion of charges, the only
-  constraining forces from the $\elecfield$ field.  The work done
+  constraining forces are from the $\elecfield$ field.  The work done
   for some displacement from $x_1$ to $x_2$ is given by
   \[
   \int_{x_1}^{x_2} dW_c
@@ -43,7 +43,7 @@ to prove the following:
   =
   \elecpotential(x_2) - \elecpotential(x_1)
   \]
-  Thus, we have
+  where $\elecpotential$ is the electric potential.  Thus, we have
   \[
   \int_{x_1}^{x_2} dW_s = \elecpotential(x_2) - \elecpotential(x_1)
   \]
@@ -54,17 +54,17 @@ to prove the following:
   \]
   Since $x_1,x_2$ are arbitrary points inside the conductor, we
   conclude that the potential within the conductor is some constant
-  $\phi_c$.  From the equation $\elecfield = \nabla\elecpotential$, we
+  $\phi_c$.  From the equation $\elecfield = \grad{\elecpotential}$, we
   then have
   \[
-  \elecfield = \nabla\elecpotential = \nabla\phi_c = 0
+  \elecfield = \grad{\elecpotential} = \grad{\phi_c} = 0
   \]
   everywhere within the interior of the conductor.
 
   Now, consider any surface $S$ confined to the interior of the
   conductor.  By Gauss' law, we have that
   \[
-  \frac{Q}{\permittivity} = \oint_S \elecfield \cdot dA
+  \frac{Q}{\permittivity} = \oint_S \dotprod{\elecfield}{dA}
   \]
   But since $\elecfield = 0$ everywhere in the interior of the
   conductor, we have
@@ -82,7 +82,7 @@ to prove the following:
   by the conductor) contains no charges.  Then for any surface $S$
   contained within the interior of the inner space, we have
   \[
-  \oint_S \elecfield \cdot dA = \frac{Q}{\permittivity} = 0
+  \oint_S \dotprod{\elecfield}{dA} = \frac{Q}{\permittivity} = 0
   \]
   Thus, the total electric flux at any point in the inner space is
   zero.  Now, consider a surface $S'$ in the interior of the
@@ -93,7 +93,7 @@ to prove the following:
   within a conductor's interior, and $S'$ is confined to the interior,
   we have that
   \[
-  \frac{Q_c}{\permittivity} = \oint_{S'} \elecfield \cdot dA = 0
+  \frac{Q_c}{\permittivity} = \oint_{S'} \dotprod{\elecfield}{dA} = 0
   \]
   Thus, there are no charges on the interior boundary, and thus
   nowhere within $S'$.  Since there are no charges within $S'$, the
@@ -105,7 +105,7 @@ to prove the following:
   surface $S$ such that the conductor's outer boundary is wholly
   contained within $S$.  Then by Gauss' law, we have
   \[
-  \oint_S \elecfield \cdot dA = \frac{Q}{\permittivity}
+  \oint_S \dotprod{\elecfield}{dA} = \frac{Q}{\permittivity}
   \]
   which implies $\elecfield$ must be non-zero outside the conductor.
 
@@ -114,12 +114,12 @@ to prove the following:
   Let $S$ be any surface that encloses an area of boundary having
   total charge $Q$ and area $A$.  Then by Gauss' theorem, we have
   \[
-  \oint_S \elecfield \cdot dA = \frac{Q}{\permittivity}
+  \oint_S \dotprod{\elecfield}{dA} = \frac{Q}{\permittivity}
   \]
   We can replace $Q$ with a surface integral over the portion of the
   boundary of the conductor $S_c$ contained by $S$, giving
   \[
-  \oint_S \elecfield \cdot dA
+  \oint_S \dotprod{\elecfield}{dA}
   =
   \frac{1}{\permittivity}\int_{S_c}\chargedensity dA
   \]
@@ -131,36 +131,36 @@ to prove the following:
   the interior of the conductor, then through the exterior, and back.
   Split this into two parts
   \[
-  \int_{C_I} \elecfield\cdot dl
+  \int_{C_I} \dotprod{\elecfield}{dl}
   \]
   which passes through the interior of the conductor, and
   \[
-  \int_{C_O} \elecfield\cdot dl
+  \int_{C_O} \dotprod{\elecfield}{dl}
   \]
   which lies outside of the conductor.  Since $\elecfield = 0$ inside
   the conductor, we have
   \[
-  \int_{C_I} \elecfield\cdot dl = 0
+  \int_{C_I} \dotprod{\elecfield}{dl} = 0
   \]
   Since
   \[
-  \oint_C \elecfield\cdot dl = 0
+  \oint_C \dotprod{\elecfield}{dl} = 0
   \]
   and
   \[
-  \oint_C \elecfield\cdot dl
+  \oint_C \dotprod{\elecfield}{dl}
   =
-  \int_{C_I} \elecfield\cdot dl +
-  \int_{C_O} \elecfield\cdot dl
+  \int_{C_I} \dotprod{\elecfield}{dl} +
+  \int_{C_O} \dotprod{\elecfield}{dl}
   \]
   then it must be true that
   \[
-  \int_{C_O} \elecfield\cdot dl = 0
+  \int_{C_O} \dotprod{\elecfield}{dl} = 0
   \]
   For the component of $\elecfield$ in the direction of $\normvec{n}$,
   rewrite this integral as
   \[
-  \int_{x_1}^{x_2} \elecfield\cdot\normvec{n}dl
+  \int_{x_1}^{x_2} \dotprod{\elecfield}{\normvec{n}}dl
   =
   \elecpotential(x_2) - \elecpotential(x_1)
   \]
@@ -171,14 +171,14 @@ to prove the following:
   \]
   and thus
   \[
-  \int_{C_O} \elecfield\cdot\normvec{n}dl
+  \int_{C_O} \dotprod{\elecfield}{\normvec{n}}dl
   =
   0
   \]
   Now consider the component of $\elecfield$ orthogonal to $\normvec{n}$,
   then for some contour, we will have that
   \[
-  \int_{C_O} \elecfield\cdot dl
+  \int_{C_O} \dotprod{\elecfield}{dl}
   \neq
   0
   \]
