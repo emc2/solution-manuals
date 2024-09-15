@@ -1,0 +1,59 @@
+Prove that the magnitute $R$ of the position vector for the center of
+mass from an arbitrary origin is given by the equation
+\[M^2 R^2 = M \sum_i m_i r_i^2 -
+\frac{1}{2}\sum_{i\neq j} m_i m_j r_{ij}^2\]
+
+\subsection*{Solution}
+First, derive $r_{ij} = -r_{ji}$:
+\begin{align*}
+  M &= \sum_i m_i \\
+  R &= \sum_i\frac{m_i r_i}{M} \\
+  r_{ij} &= r_j - r_i \\
+  r_j &= r_i + r_{ij} \\
+  r_{ij} &= -r_{ji}
+\end{align*}
+
+Start with $M^2R^2$, expand $R$ and rewrite it:
+\begin{align*}
+  M^2R^2
+  &=
+  M^2\left(\sum_i\frac{m_i r_i}{M}\right)^2 \\
+  &=
+  \left(\sum_i m_i r_i\right)^2 \\
+  &=
+  \sum_i m_i r_i \left(\sum_j m_j r_j\right)
+\end{align*}
+Split $r_j$ into $r_i + r_{ij}$:
+\begin{align*}
+  \sum_i m_i r_i \left(\sum_j m_j r_j\right)
+  &=
+  \sum_i m_i r_i \sum_j \left(m_j r_i + m_j r_{ij}\right) \\
+  &=
+  \sum_i m_i r_i \sum_j m_j r_i +
+  \sum_i m_i r_i \sum_j m_j r_{ij} \\
+  &=
+  \sum_i m_i r_i^2 \sum_j m_j +
+  \sum_i \sum_j m_i m_j r_i r_{ij}
+\end{align*}
+Replace $\sum_j m_j$ with $M$ in the first term to get
+\[M \sum_i m_i r_i^2 + \sum_i \sum_j m_i m_j r_i r_{ij}\]
+Now, $r_{ij} = 0$ if $i = j$ therefore we have
+\[M \sum_i m_i r_i^2 + \sum_{i\neq j} m_i m_j r_i r_{ij}\]
+Split the second sum into $i < j$ and $i > j$
+\[M \sum_i m_i r_i^2 +
+\sum_{i<j} m_i m_j r_i r_{ij} +
+\sum_{i>j} m_i m_j r_i r_{ij}\]
+Swap $i$ and $j$ in the third sum, then use $ r_{ij} = - r_{ij}$:
+\[M \sum_i m_i r_i^2 +
+\sum_{i<j} m_i m_j r_i r_{ij} -
+\sum_{i<j} m_i m_j r_j r_{ij}\]
+Combine the two sums:
+\[M \sum_i m_i r_i^2 +
+\sum_{i<j} m_i m_j r_{ij}( r_i -  r_j)\]
+Use $ r_{ji} =  r_i -  r_j$, then $ r_{ij} = - r_{ij}$:
+\[M \sum_i m_i r_i^2 -
+\sum_{i<j} m_i m_j r_{ij}^2\] Finally, we can exploit the fact that $
+r_{ij}^2 = r_{ji}^2$ and $r_{ij} = 0$ if $i = j$ to extend the sum
+back to all $i,j$ to obtain
+\[M \sum_i m_i r_i^2 - \frac{1}{2}\sum_{i\neq j} m_i m_j r_{ij}^2\]
+as desired.
