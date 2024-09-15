@@ -1,0 +1,88 @@
+Two wheels of radius $a$ are mounted on the ends of a common axle of
+length $b$ such that the wheels rotate independently.  The whole
+combination rolls without slipping on a plane.  Show that there are
+two nonholonomic equations of constraint,
+\begin{align*}
+\cos\theta dx + \sin\theta dy &= 0 \\
+\sin\theta dx - \cos\theta dy &= \frac{1}{2}a(d\phi + d\phi')
+\end{align*}
+(where $\theta$, $\phi$, and $\phi'$ have meanings similar to those in
+the problem of a single vertical disk, and $(x, y)$ are the
+coordinates of a point on the axle midway between the two wheels) and
+one holonomic constraint,
+\[\theta = C - \frac{a}{b}(\phi - \phi')\]
+where $C$ is a constant.
+
+\subsection*{Solution}
+
+Let $\theta$ be the angle of the axle to the $x$ axis, $\phi$, $\phi'$
+be the angles of rotation of the two wheels, $x$ and $y$ be the center
+of the axle.
+
+The centerpoint of the axle cannot move along the axle.  Therefore, we
+have
+\[\dotprod{[\cos\theta, \sin\theta]}{\velocity} = 0\]
+which is
+\[\cos\theta\deriv{x}{t} + \sin\theta\deriv{y}{t} = 0\]
+This gives us the constraint
+\[\cos\theta dx + \sin\theta dy = 0\]
+Therefore, we have that the velocity vector is orthogonal to the axle:
+\[\dotprod{[\sin\theta, -\cos\theta]}{\velocity} = |\velocity|\]
+\[\sin\theta\deriv{x}{t} - \cos\theta\deriv{y}{t} = |\velocity|\]
+
+It therefore remains to determine the magnitude of the velocity
+vector.  If we assume that both wheels have the same mass, and the
+axle has uniform density, then we can derive the center of motion:
+\[\momentum = \momentum_1 + \momentum_2\]
+Decompose momentums:
+\[2m\velocity = m\velocity_1 + m\velocity_2\]
+Then we get:
+\[\velocity = \frac{1}{2}(\velocity_1 + \velocity_2)\]
+Both $\velocity_1$ and $\velocity_2$ have the same direction, so
+\[|\velocity| = \frac{1}{2}(|\velocity_1| + |\velocity_2|)\]
+The magnitudes of the velocities of the wheels are $a\deriv{\phi}{t}$
+and $a\deriv{\phi'}{t}$, so we have:
+\begin{align*}
+  |\velocity|
+  &=
+  \frac{1}{2}\left(a\deriv{\phi}{t} + a\deriv{\phi'}{t}\right) \\
+  &=
+  \frac{a}{2}\left(\deriv{\phi}{t} + \deriv{\phi'}{t}\right)
+\end{align*}
+So we have
+\[\sin\theta\deriv{x}{t} - \cos\theta\deriv{y}{t} =
+\frac{1}{2}a\left(\deriv{\phi}{t} + \deriv{\phi'}{t}\right)\]
+This gives us the constraint
+\[\sin\theta dx - \cos\theta dy = \frac{1}{2}a(d\phi + d\phi')\]
+
+Now, given the total angles of rotation of the wheels $\phi$ and
+$\phi'$ (in radians), the total distance traveled is $a\phi$ and
+$a\phi'$ respectively.  Unless $\phi = \phi'$, both wheels travel a
+circular path with a total angular displacement of $\theta'$.
+
+Let $b'$ be the radius of the wheel whose displacement is $\phi'$, and
+$b + b'$ be the radius of the wheel whose displacement is $\phi$, with
+either radius being negative if the corresponding wheel's displacement
+is negative.  Then we have:
+\begin{align*}
+  b'\theta' &= a\phi' \\
+  (b' + b)\theta' &= a\phi
+\end{align*}
+Rewrite the second as
+\[b'\theta = a\phi - b\theta' \]
+Combine the two to get
+\begin{align*}
+  a\phi'
+  &=
+  a\phi - b\theta' \\
+  b\theta'
+  &=
+  a\phi - a\phi' \\
+  \theta'
+  &=
+  \frac{a}{b}(\phi - \phi')
+\end{align*}
+Now, set the initial angle to $C$; since the wheel rolls clockwise,
+the angular displacement is subtracted from this to give the final
+angle, giving us
+\[\theta = C - \frac{a}{b}(\phi - \phi')\]
