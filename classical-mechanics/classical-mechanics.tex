@@ -1,0 +1,32 @@
+\documentclass{report}
+\usepackage{import}
+\usepackage{fullpage}
+\usepackage{MnSymbol}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{bigints}
+
+\title{Classical Mechanics Solution Manual}
+\author{Eric L. McCorkle}
+
+\import{../}{common.tex}
+
+\newcommand{\force}{\ensuremath{\physvec{F}}}
+\newcommand{\disp}{\ensuremath{\physvec{r}}}
+\newcommand{\velocity}{\ensuremath{\physvec{v}}}
+\newcommand{\momentum}{\ensuremath{\physvec{p}}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Survey of the Elementary Principles}
+\import{./chapter-01}{chapter-01.tex}
+
+\end{document}

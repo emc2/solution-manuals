@@ -1,0 +1,85 @@
+Show that for a single particle with constant mass the equation of
+motion implies the following differential equation for the kinetic energy:
+\[\deriv{T}{t} = \dotprod{\force}{\velocity}\]
+while if the mass varies with time the corresponding equation is
+\[\deriv{(mT)}{t} = \dotprod{\force}{\momentum}\]
+
+\subsection*{Solution}
+
+\subsubsection*{Solution for Constant Mass}
+
+Start with
+\[T = \int\dotprod{\force}{d\disp}\]
+Change the integration variable to $t$:
+\begin{align*}
+  T
+  &=
+  \int\dotprod{\force}{\deriv{\disp}{t}}dt \\
+  &=
+  \int\dotprod{\force}{\velocity}dt \\
+\end{align*}
+Then differentiate both sides with respect to time to obtain
+\[
+\deriv{T}{t}
+=
+\derivop{t}\int\dotprod{\force}{\velocity}dt
+\]
+The Fundamental Theorem of Calculus then gives us
+\[
+\deriv{T}{t}
+=
+\dotprod{\force}{\velocity}
+\]
+as desired.
+
+\subsubsection*{Solution for Varying Mass}
+
+Start with
+\[
+\int\dotprod{\force}{\momentum}dt
+=
+\sum_i\int F_i p_i dt
+\]
+Substitute by $\force = \deriv{\momentum}{t}$:
+\[
+\int\dotprod{\force}{\momentum}dt
+=
+\sum_i\int p_i \deriv{p_i}{t}dt
+\]
+Change integration varibles to $p_i$:
+\[
+\int\dotprod{\force}{\momentum}dt
+=
+\sum_i\int p_i dp_i
+\]
+This gives us:
+\[
+\int\dotprod{\force}{\momentum}dt
+=
+\sum_i\frac{p_i^2}{2}
+\]
+Substitute $\momentum = m\velocity$:
+\[
+\int\dotprod{\force}{\momentum}dt
+=
+\sum_i\frac{mv_i^2}{2}
+\]
+Substitute $T = \sum_i\frac{m^2v_i^2}{2}$:
+\[
+mT
+=
+\int\dotprod{\force}{\momentum}dt
+\]
+Now, differentiate both sides with respect to $t$ to get
+\[
+\deriv{(mT)}{t}
+=
+\derivop{t}
+\int\dotprod{\force}{\momentum}dt
+\]
+The Fundamental Theorem of Calculus gives us:
+\[
+\deriv{(mT)}{t}
+=
+\dotprod{\force}{\momentum}
+\]
