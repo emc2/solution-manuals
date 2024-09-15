@@ -1,0 +1,131 @@
+Suppose a system of two particles is known to obey the equations of motion,
+\[M\secondderiv{\physvec{R}}{t} =
+\sum_i\force^{(e)}_i \equiv
+\force^{(e)}\]
+\[\deriv{\angmomentum}{t} = \torque^{(e)}\]
+From the equations of motion of the individual particles show that the
+internal forces between particles satisfy both the weak and strong
+laws of action and reaction.
+
+\subsection*{Solution}
+
+To begin, for force, we have
+\begin{align*}
+  M\secondderiv{\physvec{R}}{t}
+  &=
+  \force^{(e)} \\
+  &=
+  \force^{(e)}_1 + \force^{(e)}_2
+\end{align*}
+and
+\[
+\force_1 = \force^{(e)}_1 + \force_{21},\qquad
+\force_2 = \force^{(e)}_2 + \force_{12},\qquad
+m_i\secondderiv{\radius_i}{t} = \force_i
+\]
+and for torque, we have
+\begin{align*}
+  \deriv{\angmomentum}{t}
+  &=
+  \torque^{(e)} \\
+  &=
+  \crossprod{\physvec{R}}{\force^{(e)}} \\
+  &=
+  \torque^{(e)}_1 + \torque^{(e)}_2 \\
+  &=
+  \crossprod{\radius_1}{\force^{(e)}_1} + \crossprod{\radius_1}{\force^{(e)}_1}
+\end{align*}
+
+\subsubsection*{Weak Law of Action}
+
+Start with
+\[\force_1 + \force_2\]
+Apply $\force_i = m_i\secondderiv{\radius_i}{t}$ to get
+\begin{align*}
+  \force_1 + \force_2
+  &=
+  m_1\secondderiv{\radius_1}{t} + m_2\secondderiv{\radius_2}{t} \\
+  &=
+  \secondderivop{t}(m_1\radius_1 + m_2\radius_2)
+\end{align*}
+Use $\physvec{R} = \frac{m_1r1 + m_2\radius_2}{M}$ to get
+\[M\secondderiv{\physvec{R}}{t}\]
+Now we have
+\[M\secondderiv{\physvec{R}}{t} = \force_1 + \force_2\]
+Rewrite using $\force_1 = \force^{(e)}_1 + \force_{21}$ and $\force_2 =
+\force^{(e)}_2 + \force_{12}$ to get
+\begin{align*}
+  M\secondderiv{\physvec{R}}{t}
+  &=
+  \force^{(e)}_1 + \force_{21} + \force^{(e)}_2 + \force_{12} \\
+  &=
+  \force^{(e)} + \force_{12} + \force_{21}
+\end{align*}
+Apply $M\secondderiv{\physvec{R}}{t} = \force^{(e)}$ to get
+\[\force_{12} + \force_{21} = 0\]
+This gives us the weak law of action:
+\[\force_{12} = -\force_{21}\]
+
+\subsubsection*{Strong Law of Action}
+
+Given
+\[\force_1 = \force^{(e)}_1 + \force_{12}\]
+define
+\[\torque_1 =
+\crossprod{\radius_1}{\force_1} =
+\crossprod{\radius_1}{\force^{(e)}_1} + \crossprod{\radius_1}{\force_{12}}\]
+Then apply $\torque^{(e)}_i = \crossprod{\radius_i}{\force^{(e)}_i}$ to get
+\[
+\torque_1 = \torque^{(e)}_1 + \crossprod{\radius_1}{\force_{12}},\qquad\qquad
+\torque_2 = \torque^{(e)}_2 + \crossprod{\radius_2}{\force_{21}}
+\]
+
+Now start with
+\[\torque_1 + \torque_2\]
+Apply $\torque_i = \crossprod{\radius_i}{\force_i}$ to get
+\begin{align*}
+  \torque_1 + \torque_2
+  &=
+  \crossprod{\radius_i}{\force_i} + \crossprod{\radius_i}{\force_i} \\
+  &=
+  \derivop{t}\crossprod{\radius_1}{\momentum_1}
+  +\derivop{t}\crossprod{\radius_2}{\momentum_2} \\
+  &=
+  \derivop{t}
+  \left(
+  \crossprod{\radius_1}{\momentum_1}
+  +\crossprod{\radius_2}{\momentum_2}
+  \right)
+\end{align*}
+then apply $\angmomentum = \crossprod{\radius_1}{\momentum_1} +
+\crossprod{\radius_2}{\momentum_2}$ to get
+\[\torque_1 + \torque_2 = \deriv{\angmomentum}{t}\]
+Apply the derivations $\torque_1 = \torque^{(e)}_1 +
+\crossprod{\radius_1}{\force_{12}}$ and $\torque_2 = \torque^{(e)}_2 +
+\crossprod{\radius_2}{\force_{21}}$
+\[
+\torque^{(e)}_1
++\crossprod{\radius_1}{\force_{12}}
++\torque^{(e)}_2
++\crossprod{\radius_2}{\force_{21}}
+=
+\deriv{\angmomentum}{t}
+\]
+Apply $\torque^{(e)} = \torque^{(e)}_1 + \torque^{(e)}_2$ and $\deriv{\angmomentum}{t} = \torque^{(e)}$ to get
+\[
+\crossprod{\radius_1}{\force_{12}} + \crossprod{\radius_2}{\force_{21}}
+=
+0
+\]
+Apply $\force_{12} = -\force_{21}$ and $\radius_2 = \radius_1 +
+\radius_{12}$ to get
+\begin{align*}
+  \crossprod{\radius_1}{\force_{12}}
+  -\crossprod{(\radius_1 + \radius_{12})}{\force_{12}}
+  &=
+  0 \\
+  \crossprod{\radius_{12}}{\force_{12}}
+\end{align*}
+Which by $\force_{12} = -\force_{21}$ and $\radius_{12} =
+-\radius_{21}$ also gives us
+\[\crossprod{\radius_{21}}{\force_{21}} = 0\]

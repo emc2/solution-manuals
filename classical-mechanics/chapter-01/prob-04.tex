@@ -1,0 +1,84 @@
+The equations of constraint for the rolling disk
+\[ dx - a\sin\theta d\phi = 0\]
+\[ dy + a\cos\theta d\phi = 0\]
+are special cases of general linear differential equations of
+constraint of the form
+\[\sum_{i=1}^N g_i(x_1,\ldots,x_n)dx_i = 0\]
+A constraint condition of this type is holonomic only if an
+integrating function $f(x_1,\ldots,x_n)$ can befound that turns it
+into an exact differential.  Clearly the function must be such that
+\[\partderivop{x_j}fg_i = \partderivop{x_i}fg_j\]
+for all $i \neq j$.  Show that no such integrating factor can be found
+for either of the equations.
+
+\subsection*{Solution}
+
+The parameters are $x$, $y$, $\theta$ and $\phi$.  Find the $g_i$ such
+that
+\[
+g_x(x, y, \theta, \phi)dx
++g_y(x, y, \theta, \phi)dy
++g_{\theta}(x, y, \theta, \phi)d\theta
++g_{\phi}(x, y, \theta, \phi)d\phi
+=
+0
+\]
+The equations are:
+\[ dx - a\sin\theta d\phi = 0\]
+\[ dy + a\cos\theta d\phi = 0\]
+For the first, we have
+\begin{align*}
+g_x(x, y, \theta, \phi) &= 1 \\
+g_y(x, y, \theta, \phi) &= 0 \\
+g_{\theta}(x, y, \theta, \phi) &= 0 \\
+g_{\phi}(x, y, \theta, \phi) &= -a\sin\theta \\
+\end{align*}
+We need to find $f$ such that for all $i \neq j \in \{x, y, \theta,
+\phi\}$,
+\[\partderivop{x_j}fg_i = \partderivop{x_i}fg_j\]
+This gives us
+\begin{align*}
+\partderiv{f}{y} &= 0 \\
+\partderiv{f}{\theta} &= 0 \\
+\partderiv{f}{\phi} &= -a\partderivop{x}f\sin\theta \\
+\partderivop{y}f\sin\theta &= 0 \\
+\partderivop{\theta}f\sin\theta &= 0
+\end{align*}
+The only non-constant derivative is
+\[\partderiv{f}{\phi} = -a\partderivop{x}f\sin\theta\]
+but we can rewrite the right side as
+\[
+\partderiv{f}{\phi}
+=
+-a\partderiv{\theta}{x}
+\partderivop{\theta}f\sin\theta\]
+which gives us
+\[\partderiv{f}{\phi} = 0\]
+Thus, $f$ must be a constant function.  Clearly, this is only satified
+if $f = 0$.
+
+With the second, we have a similar situation:
+\begin{align*}
+g_x(x, y, \theta, \phi) &= 0 \\
+g_y(x, y, \theta, \phi) &= 1 \\
+g_{\theta}(x, y, \theta, \phi) &= 0 \\
+g_{\phi}(x, y, \theta, \phi) &= a\cos\theta
+\end{align*}
+\begin{align*}
+\partderiv{f}{x} &= 0 \\
+\partderivop{x}f\cos\theta &= 0 \\
+\partderivop{\theta}f\cos\theta &= 0 \\
+\partderiv{f}{\phi} &= a\partderivop{y}f\cos\theta \\
+\partderiv{f}{\theta} &= 0
+\end{align*}
+The only non-constant derivative is
+\[\partderiv{f}{\phi} = a\partderivop{y}f\cos\theta\]
+We can rewrite the right side as
+\[
+\partderiv{f}{\phi}
+=
+a\partderiv{\theta}{y}\partderivop{\theta}f\cos\theta
+\]
+which gives us
+\[\partderiv{f}{\phi} = 0\]
+Again, $f$ must be a constant function.
