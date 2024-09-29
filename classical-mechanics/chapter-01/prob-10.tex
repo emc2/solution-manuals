@@ -1,0 +1,103 @@
+Let $q_1,\ldots,q_n$ be a set of independent generalized coordinates
+for a system of $n$ degrees of freedom, with a Lagrangian $L(q,
+\dot{q}, t)$.  Suppose we transform to another set of independent
+coordinates $s_1,\ldots,s_n$ by means of transformation equations
+\[q_i = q_i(s_1, \ldots, s_n), i\in[1,n]\]
+Show that if the Lagrangian function is expressed as a function of
+$s_j,\dot{s_j}$, and $t$ through the equations of transformation, then
+L satisfies Lagrange's equations with respect to the $s$ coordinates:
+\[ \derivop{t}\left(\partderiv{L}{\dot{s_j}}\right) - \partderiv{L}{s_j} = 0 \]
+In other words, the form of Lagrange's equations is invariant under a
+point transformation.
+
+\subsection*{Solution}
+
+First, examine the key derivatives.  Start with $\dot{q_i}$ in terms
+of $s_1,\ldots,s_n$
+\begin{align*}
+  \dot{q_j} &= \deriv{q_j}{t} \\
+  &= \sum_k\partderiv{q_j}{s_k}\dot{s_k} + \partderiv{q_j}{t}
+\end{align*}
+First, note that
+\[\partderiv{q_j}{\dot{s_k}} = 0\]
+since no $q_j$ may depend on any $\dot{s_k}$.
+
+Now examine $\partderiv{\dot{q_j}}{s_k}$
+\[ \partderivop{s_k}\deriv{q_j}{t} \]
+We can apply the identity
+\[ \partderivop{x}\deriv{f}{t} = \derivop{t}\partderiv{f}{x} \]
+from Devrivation~\ref{nielsen} to obtain
+\[ \partderiv{\dot{s_k}}{q_j} = \derivop{t}\partderiv{s_k}{q_j} \]
+
+Finally, for $\partderiv{\dot{q_j}}{\dot{s_k}}$
+\[ \partderivop{\dot{s_k}}\deriv{q_j}{t} \]
+apply the identity
+\[
+\derivop{t}\partderiv{f}{\dot{x}}
+=
+\partderivop{\dot{x}}\deriv{f}{t} - \partderiv{f}{\dot{x}}
+\]
+from Devrivation~\ref{nielsen} to obtain
+\[ \derivop{t}\partderiv{q_j}{\dot{s_k}} + \partderiv{q_j}{s_k} \]
+But we know that
+\[\partderiv{q_j}{\dot{s_k}} = 0\]
+therefore, we obtain
+\[ \partderiv{\dot{q_j}}{\dot{s_k}} = \partderiv{q_j}{s_k} \]
+Now use these to examine $\partderiv{L}{s_j}$ and
+$\derivop{t}\partderiv{L}{\dot{s_j}}$.  For $\partderiv{L}{s_j}$, we
+have
+\[
+\sum_k\partderiv{L}{\dot{q_k}}\partderiv{\dot{q_k}}{s_j}
++\sum_k\partderiv{L}{q_k}\partderiv{q_k}{s_j}\]
+apply the identity $\partderiv{\dot{q_j}}{\dot{s_k}} =
+\partderiv{q_j}{s_k}$ to get
+\[
+\sum_k\partderiv{L}{\dot{q_k}}\left(\derivop{t}\partderiv{q_k}{s_j}\right)
++\sum_k\partderiv{L}{q_k}\partderiv{q_k}{s_j}
+\]
+
+For $\derivop{t}\partderiv{L}{\dot{s_j}}$, first examine
+$\partderiv{L}{\dot{s_j}}$
+\[
+\sum_k\partderiv{L}{\dot{q_k}}\partderiv{\dot{q_k}}{\dot{s_j}}
++\sum_k\partderiv{L}{q_k}\partderiv{q_k}{\dot{s_j}}
+\]
+we can apply the identities $\partderiv{q_j}{\dot{s_k}} = 0$ to
+eliminate the second term, and then $\partderiv{\dot{q_j}}{\dot{s_k}}
+= \partderiv{q_j}{s_k}$ to obtain
+\[\sum_k\partderiv{L}{\dot{q_k}}\partderiv{q_k}{s_j}\]
+Now examine the total derivative of the summation element
+\[\derivop{t}\left(\partderiv{L}{\dot{q_k}}\partderiv{q_k}{s_j}\right)\]
+\[
+\left(\derivop{t}\partderiv{L}{\dot{q_k}}\right)\partderiv{q_k}{s_j}
++\partderiv{L}{\dot{q_k}}\left(\derivop{t}\partderiv{q_k}{s_j}\right)
+\]
+
+Now use these to examine the Lagrange equation in terms of $s_j$
+\begin{align*}
+  \derivop{t}\partderiv{L}{\dot{s_j}} - \partderiv{L}{s_j}
+  &=
+  \left[
+    \sum_k\left(\derivop{t}\partderiv{L}{\dot{q_k}}\right)\partderiv{q_k}{s_j} +
+    \sum_k\partderiv{L}{\dot{q_k}}\left(\derivop{t}\partderiv{q_k}{s_j}\right)
+  \right]
+  -\left[
+    \sum_k\partderiv{L}{\dot{q_k}}\left(\derivop{t}\partderiv{q_k}{s_j}\right) +
+    \sum_k\partderiv{L}{q_k}\partderiv{q_k}{s_j}
+  \right] \\
+  &=
+  \sum_k\left(\derivop{t}\partderiv{L}{\dot{q_k}}\right)\partderiv{q_k}{s_j}
+  -\sum_k\partderiv{L}{q_k}\partderiv{q_k}{s_j} \\
+  &=
+  \sum_k
+  \left[
+    \left(\derivop{t}\partderiv{L}{\dot{q_k}}\right)\partderiv{q_k}{s_j}
+    -\partderiv{L}{q_k}\partderiv{q_k}{s_j}
+  \right] \\
+  &=
+  \sum_k\left(\derivop{t}\partderiv{L}{\dot{q_k}}
+  -\partderiv{L}{q_k}\right)\partderiv{q_k}{s_j}
+\end{align*}
+We can apply the Lagrange equation on $q_k$ to the inner term.  This
+shows the entire right-hand side to be 0, thus giving us
+\[\derivop{t}\partderiv{L}{\dot{s_j}} - \partderiv{L}{s_j} = 0\]

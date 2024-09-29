@@ -1,0 +1,74 @@
+The electromagnetic field is invariant under a gauge transformation of
+the scalar and vector potential given by
+\begin{align*}
+  \vecpotential &\rightarrow \vecpotential + \grad{\psi(\radius, t)} \\
+  \phi &\rightarrow \phi + \partderiv{\psi}{t}
+\end{align*}
+where $\psi$ is arbitrary but differentiable.  What effect does this
+gauge transformation have on the Lagrangian of a particle moving in
+the electromagnetic field?  Is the motion affected?
+
+Note: errata applied, removing a $\frac{1}{c}$ factor.
+
+\subsection*{Solution}
+As per equation 1.63, the Lagrangian is
+\[ L = \frac{1}{2}mv^2 - q\phi + q\dotprod{\vecpotential}{\velocity} \]
+Apply the transformation to get
+\begin{align*}
+  L
+  &=
+  \frac{1}{2}mv^2 - q\phi + q\dotprod{\vecpotential}{\velocity} \\
+  &=
+  \frac{1}{2}mv^2 -
+  q\left(\phi + \partderiv{\psi}{t}\right) +
+  q\dotprod{\left(\vecpotential + \grad{\psi(\radius, t)}\right)}{\velocity} \\
+  &=
+  \frac{1}{2}mv^2 -
+  q\phi +
+  q\dotprod{\vecpotential}{\velocity} +
+  q\partderiv{\psi}{t} +
+  q\dotprod{\grad{\psi(\radius, t)}}{\velocity}
+\end{align*}
+Expand the terms of
+\[ \dotprod{\grad{\psi(\radius, t)}}{\velocity} \]
+to get
+\begin{align*}
+  \dotprod{\grad{\psi(\radius, t)}}{\velocity}
+  &=
+  \dotprod{\left[ \partderiv{\psi(\radius, t)}{x}, \partderiv{\psi(\radius, t)}{y}, \partderiv{\psi(\radius, t)}{z} \right]}{[\dot{x}, \dot{y}, \dot{z}]} \\
+  &=
+  \partderiv{\psi(\radius, t)}{x}\dot{x}
+  +\partderiv{\psi(\radius, t)}{y}\dot{y}
+  +\partderiv{\psi(\radius, t)}{z}\dot{z}
+\end{align*}
+Substituting this into the Lagrangian gives us
+\begin{align*}
+  L
+  &=
+  \frac{1}{2}mv^2 -
+  q\phi +
+  q\dotprod{\vecpotential}{\velocity} +
+  q\partderiv{\psi}{t} +
+  q\dotprod{\grad{\psi(\radius, t)}}{\velocity} \\
+  &=
+  \frac{1}{2}mv^2 -
+  q\phi +
+  q\dotprod{\vecpotential}{\velocity} +
+  q\left(
+  \partderiv{\psi(\radius, t)}{x}\dot{x} +
+  \partderiv{\psi(\radius, t)}{y}\dot{y} +
+  \partderiv{\psi(\radius, t)}{z}\dot{z} +
+  \partderiv{\psi}{t}
+  \right) \\
+  &=
+  \frac{1}{2}mv^2 -
+  q\phi +
+  q\dotprod{\vecpotential}{\velocity} +
+  q\deriv{\psi(\radius, t)}{t}
+\end{align*}
+Stated in terms of the original Lagrangian, this is
+\[ L + q\deriv{\psi(\radius, t)}{t} \]
+which is a transform of the kind demonstrated in
+Derivation~\ref{lagrangeinv} to also satisfy Lagrange's equations.
+Note that this transform does not affect the velocity; therefore,
+motion is unaffected.
