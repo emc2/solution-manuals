@@ -1,0 +1,81 @@
+Show that Lagrange's equations in the form of
+\[\derivop{t}\left(\partderiv{T}{\dot{q}_j}\right) - \partderiv{T}{q_j} = Q_j\]
+can also be written in the form
+\[\partderiv{\dot{T}}{\dot{q}_j} - 2\partderiv{T}{q_j} = Q_j  \]
+
+\subsection*{Solution}
+First, prove that for any $T =
+F(t,q_1,\ldots,q_n,\dot{q_1},\ldots,\dot{q_n})$, the following holds:
+\[
+\partderivop{\dot{q}_j}\deriv{T}{t}
+=
+\partderiv{T}{q_j}
++\derivop{t}\partderiv{T}{\dot{q}_j}
+\]
+Start with
+\[
+\partderivop{\dot{q}_j}\deriv{T}{t}
+\]
+and rewrite as
+\begin{align*}
+  \partderivop{\dot{q}_j}\deriv{T}{t}
+  &=
+  \partderivop{\dot{q}_j}\left(\sum_k\partderiv{T}{\dot{q}_k}\ddot{q}_k +
+  \sum_k\partderiv{T}{q_k}\dot{q}_k +
+  \partderiv{T}{t}\right) \\
+  &=
+  \sum_k\partderivop{\dot{q}_j}\left(\partderiv{T}{\dot{q}_k}\ddot{q}_k\right) +
+  \sum_k\partderivop{\dot{q}_j}\left(\partderiv{T}{q_k}\dot{q}_k\right) +
+  \partderivop{\dot{q}_j}\left(\partderiv{T}{t}\right) \\
+  &=
+  \sum_k\secondcrossderiv{T}{\dot{q}_j}{\dot{q}_k}\ddot{q}_k +
+  \sum_k\partderiv{T}{\dot{q}_k}\partderiv{\ddot{q}_k}{\dot{q}_j} +
+  \sum_k\secondcrossderiv{T}{\dot{q}_j}{q_k}\dot{q}_k +
+  \sum_k\partderiv{T}{q_j}\partderiv{\dot{q}_k}{\dot{q}_j} +
+  \secondcrossderiv{T}{\dot{q}_j}{t} \\
+\end{align*}
+Because all $q_i$ are independent, then we can simplify to
+\[
+\sum_k\secondcrossderiv{T}{\dot{q}_j}{\dot{q}_k}\ddot{q}_k +
+\partderiv{T}{\dot{q}_j}\partderiv{\ddot{q}_j}{\dot{q}_j} +
+\sum_k\secondcrossderiv{T}{\dot{q}_j}{q_k}\dot{q}_k +
+\partderiv{T}{q_j}\partderiv{\dot{q}_j}{\dot{q}_j} +
+\secondcrossderiv{T}{\dot{q}_j}{t}
+\]
+and since any $\ddot{q_i}, \dot{q_i}$ are independent, then we have
+\[
+\sum_k\secondcrossderiv{T}{\dot{q}_j}{\dot{q}_k}\ddot{q}_k +
+\sum_k\secondcrossderiv{T}{\dot{q}_j}{q_k}\dot{q}_k +
+\partderiv{T}{q_j} +
+\secondcrossderiv{T}{\dot{q}_j}{t}
+\]
+Apply Schwartz's theorem and separate out the partial derivatives to get
+\[
+\sum_k\partderivop{\dot{q}_j}\partderiv{T}{\dot{q}_j}\ddot{q}_k +
+\sum_k\partderivop{q_k}\partderiv{T}{\dot{q}_j}\dot{q}_k +
+\secondcrossderiv{T}{\dot{q}_j}{t} +
+\partderiv{T}{q_j}
+\]
+which gives us
+\[ \derivop{t}\partderiv{T}{\dot{q}_j} + \partderiv{T}{q_j} \]
+This gives us the identity
+\[
+\partderivop{\dot{q}_j}\deriv{T}{t}
+=
+\derivop{t}\partderiv{T}{\dot{q}_j} + \partderiv{T}{q_j}
+\]
+
+Now, take this and rewrite it as
+\[
+\derivop{t}\partderiv{T}{\dot{q}_j}
+=
+\partderivop{\dot{q}_j}\dot{T}
+-\partderiv{T}{q_j}
+\]
+Applying this to
+\[
+\derivop{t}\left(\partderiv{T}{\dot{q}_j}\right) - \partderiv{T}{q_j} = Q_j
+\]
+gives us
+\[\partderiv{\dot{T}}{\dot{q}_j} - 2\partderiv{T}{q_j} = Q_j \]
+as desired.

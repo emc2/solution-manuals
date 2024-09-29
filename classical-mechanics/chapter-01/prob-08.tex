@@ -1,0 +1,88 @@
+If $L$ is a Lagrangian for a system of $n$ degrees of freedom
+satisfying Lagrange's equations, show by direct substitution that
+\[ L' = L + \deriv{F(q_1,\ldots,q_n, t)}{t}\]
+also satisfies Lagrange's equations where F is any arbitrary, but
+differentiable, function of its arguments.
+
+\subsection*{Solution}
+Start with
+\[\derivop{t}\left(\partderiv{L}{\dot{q_j}}\right) - \partderiv{L}{q_j} = 0\]
+Let $G = F(q_1,\ldots,q_n, t)$ (for succinctness)
+and substitute
+\[ L' = L + \deriv{G}{t}\]
+in place of $L$ to get
+\[
+\derivop{t}\partderiv{L'}{\dot{q_j}} +
+\derivop{t}\partderivop{\dot{q_j}}\deriv{G}{t} -
+\partderiv{L'}{q_j} -
+\partderivop{q_j}\deriv{G}{t} = 0
+\]
+
+Now prove that for any $G = F(q_1,\ldots,q_n, t)$, the following holds:
+\[\partderivop{q_j}\deriv{G}{t} = \derivop{t}\partderiv{G}{q_j} \]
+Start with
+\[ \partderivop{q_j}\deriv{G}{t} \]
+and rewrite as
+\begin{align*}
+  \partderivop{q_j}\deriv{G}{t}
+  &=
+  \partderivop{q_j}\left(\sum_k\partderiv{G}{q_k}\dot{q_k} +
+  \partderiv{G}{t}\right) \\
+  &=
+  \sum_k\partderivop{q_j}\left(\partderiv{G}{q_k}\dot{q_k}\right) +
+  \partderivop{q_j}\left(\partderiv{G}{t}\right) \\
+  &=
+  \sum_k\secondcrossderiv{G}{q_j}{q_k}\dot{q_k} +
+  \sum_k\partderiv{G}{q_k}\partderiv{\dot{q_k}}{q_j} +
+  \secondcrossderiv{G}{q_j}{t} \\
+  &=
+  \sum_k\secondcrossderiv{G}{q_j}{q_k}\dot{q_k} +
+  \secondcrossderiv{G}{q_j}{t}
+\end{align*}
+Apply Schwartz's theorem and separate the partial derivatives to get
+\[
+\sum_k\partderivop{q_k}\partderiv{G}{q_j}\dot{q_k} +
+\partderivop{t}\partderiv{G}{q_j}
+\]
+and revert this to a total derivative to obtain
+\[ \derivop{t}\partderiv{G}{q_j} \]
+as desired.
+
+Now take
+\[ \derivop{t}\partderivop{\dot{q_j}}\deriv{G}{t} \]
+and use the identity
+\[
+\partderivop{\dot{q}_j}\deriv{T}{t}
+=
+\partderiv{T}{q_j}
++\derivop{t}\partderiv{T}{\dot{q}_j}
+\]
+from Derivation~\ref{nielsen} to obtain
+\[
+\partderivop{q_j}\deriv{G}{t}
+=
+\derivop{t}\partderiv{G}{\dot{q_j}} + \partderiv{G}{q_j}
+\]
+The first term on the right side zeros out since $G$ is not a function
+of any $\dot{q}_i$, which gives us
+\[ \partderivop{q_j}\deriv{G}{t} = \partderiv{G}{q_j}\]
+Applying this to
+\[ \derivop{t}\partderivop{\dot{q_j}}\deriv{G}{t} \]
+then gives us
+\[ \derivop{t}\partderiv{G}{q_j} \]
+which we can rewrite using the above proof into
+\[ \partderivop{q_j}\deriv{G}{t} \]
+
+Substituting this into
+\[
+\derivop{t}\partderiv{L'}{\dot{q_j}} +
+\derivop{t}\partderivop{\dot{q_j}}\deriv{G}{t} -
+\partderiv{L'}{q_j} -
+\partderivop{q_j}\deriv{G}{t} = 0
+\]
+then gives us
+\[
+\derivop{t}\partderiv{L'}{\dot{q_j}} +
+\partderiv{L'}{q_j} = 0
+\]
+as desired.
