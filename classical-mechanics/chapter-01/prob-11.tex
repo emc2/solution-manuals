@@ -1,0 +1,166 @@
+Consider a uniform thin disk that rolls without slipping on a
+horizontal plane.  A horizontal force is applied to the center of the
+disk and in a direction parallel to the plane of the disk.
+\begin{itemize}
+\item[(a)] Derive Lagrange's equations and find the generalized force.
+\item[(b)] Discuss the motion if the force is not applied parallel to the
+  plane of the disk.
+\end{itemize}
+
+\subsection*{Solution}
+\begin{itemize}
+\item[(a)]
+  For the first part, define the positive $x$ axis as the direction of
+  the disk's motion, $a$ as the disk's radius, $m$ as its mass, and
+  $\theta$ as its angular displacement (in radians).
+
+  For any point in the disk at radius $r$ and angle $\theta$ from a line
+  through the center parallel to the $x$ axis, we have a rotational
+  velocity $\velocity_R(r, \theta) = [\dot{x_R}(r, \theta), \dot{y_R}(r,
+    \theta)]$, where
+  \begin{align*}
+    \dot{x_r}(r, \theta) &= r\dot{\theta}\sin{\theta} \\
+    \dot{y_r}(r, \theta) &= r\dot{\theta}\cos{\theta} \\
+  \end{align*}
+  Now, the position of the center of the disk, $x_c$ is also a
+  parameter.  Since the disk is rigid, this is a component of the
+  velocities of all points.  Thus, we have
+  \[ \velocity(r, \theta) = \velocity_R(r, \theta) + \velocity_c \]
+  Since the disk rolls without slipping, it must be the case that the
+  point at which the disk touches the ground does not move; therefore,
+  we have
+  \[ \velocity_R(a, \pi/2) + \velocity_c = 0 \]
+  This tells us that
+  \[ \velocity_c = [a\dot{\theta}, 0] \]
+  and we have
+  \[
+  \velocity(r, \theta) =
+  [
+    r\dot{\theta}\sin{\theta} + a\dot{\theta},
+    r\dot{\theta}\cos{\theta}
+  ]
+  \]
+  and
+  \begin{align*}
+    \dotprod{\velocity}{\velocity}
+    &= r^2\dot{\theta}^2\sin^2{\theta} +
+    ar\dot{\theta}^2\sin{\theta} +
+    a^2\dot{\theta}^2 +
+    r^2\dot{\theta}^2\cos^2{\theta} \\
+    &= r^2\dot{\theta}^2(\cos^2{\theta} + \sin^2{\theta}) +
+    ar\dot{\theta}^2\sin{\theta} +
+    a^2\dot{\theta}^2 \\
+    &= r^2\dot{\theta}^2 +
+    ar\dot{\theta}^2\sin{\theta} +
+    a^2\dot{\theta}^2 \\
+  \end{align*}
+
+  Since the disk has uniform density $\rho = \frac{m}{2\pi a^2}$, we can
+  find the total kinetic energy using the integral
+  \begin{align*}
+    \int \frac{1}{2}\rho \dotprod{\velocity}{\velocity} dA
+    &=
+    \frac{m}{2\pi a^2}
+    \int
+    r^2\dot{\theta}^2 +
+    ar\dot{\theta}^2\sin{\theta} +
+    a^2\dot{\theta}^2
+    dA
+    \end{align*}
+  Now, the measure of area in terms of radial and angular displacement
+  is
+  \[ dA = rd\theta dr \]
+  Therefore, we apply Fubini's theorem to get
+  \[
+  \frac{m}{2\pi a^2} \int_0^a \int_0^{2\pi}
+  r^3\dot{\theta}^2 +
+  r^2a\dot{\theta}^2\sin{\theta} +
+  ra^2\dot{\theta}^2
+  d\theta dr
+  \]
+  Note that $\dot{\theta}$ is independent of $\theta$ here, so the
+  integral by $\theta$ is trivial, giving
+  \begin{align*}
+    \frac{m}{2\pi a^2} \int_0^a \int_0^{2\pi}
+    r^3\dot{\theta}^2 +
+    r^2a\dot{\theta}^2\sin{\theta} +
+    ra^2\dot{\theta}^2
+    d\theta dr
+    &=
+    \frac{m}{a^2} \int_0^a dr
+    r^3\dot{\theta}^2 +
+    ra^2\dot{\theta}^2 \\
+    &=
+    \frac{m}{a^2}
+    \left(\frac{1}{4} a^4\dot{\theta}^2 +
+    \frac{1}{2} a^4\dot{\theta}^2\right) \\
+    &=
+    \frac{1}{4}ma^2\dot{\theta}^2 + \frac{1}{2} ma^2\dot{\theta}^2 \\
+    &=
+    \frac{3}{4}ma^2\dot{\theta}^2
+  \end{align*}
+
+  Now, find the key derivatives
+  \begin{align*}
+    \partderiv{T}{\theta}
+    &=
+    \partderivop{\theta}\frac{3}{4}ma^2\dot{\theta}^2 \\
+    &=
+    0
+  \end{align*}
+  \begin{align*}
+    \partderiv{T}{\dot{\theta}}
+    &=
+    \partderivop{\dot{\theta}}\frac{3}{4}ma^2\dot{\theta}^2 \\
+    &=
+    \frac{3}{2}ma^2\dot{\theta}
+  \end{align*}
+  \begin{align*}
+    \derivop{t}\partderiv{T}{\dot{\theta}}
+    &=
+    \derivop{t}\frac{3}{2}ma^2\dot{\theta} \\
+    &=
+    \frac{3}{2}ma^2\ddot{\theta}
+  \end{align*}
+
+  To find the generalized force, take the force $\force$ applied to the
+  center of the disk and apply the formula
+  \[Q_{\theta} = \dotprod{\force}{\partderiv{x_c}{\theta}}\]
+  Where $x_c$ is displacement of the centerUse the fact that
+  \[\partderiv{\radius_i}{q_j} = \partderiv{\velocity_i}{\dot{q_j}}\]
+  to get
+  \[\dotprod{F}{\partderiv{\dot{x}}{\dot{\theta}}}\]
+  From the relationship between velocity of the center to angular
+  velocity, we have
+  \[\dot{x_c} = a\dot{\theta}\]
+  therefore
+  \begin{align*}
+    \partderiv{\dot{x_c}}{\dot{\theta}}
+    &=
+    \partderivop{\dot{\theta}}a\dot{\theta} \\
+    &=
+    a
+  \end{align*}
+  Therefore, we get
+  \[ Q_{\theta} = a\force \]
+  (This is essentially the torque resulting from the force)
+
+  Putting all this together gives us the Lagrange equation
+  \[ \frac{3}{2}ma^2\ddot{\theta} = a\force \]
+  or
+  \[ \frac{3}{2}ma\ddot{\theta} = \force \]
+
+\item[(b)]
+  If the force is not parallel to the $x$ axis (which we have defined as
+  the axis of motion), then some component of it (which may be 0) acts
+  in the $x$ direction, some component acts perpendicular to the disk at
+  its exact center, and some component acts on the vertical axis.  Since
+  the disk cannot slip and the perpendicular force acts on the exact
+  center, there is no way to turn the disk.  Since there is no friction,
+  and we assume the disk cannot leave contact with the surface, the
+  force on the vertical axis similarly has no effect.  This leaves only
+  the $x$ component of the generalized force, which acts as before,
+  giving us
+  \[ \frac{3}{2}ma\ddot{\theta} = \force_x \]
+
+\end{itemize}

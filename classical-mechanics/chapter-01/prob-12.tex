@@ -1,0 +1,40 @@
+The \emph{escape velocity} of a particle on Earth is the minimum
+velocity required at Earth's survface in order that the particle can
+escape from Earth's gravitational field.  Neglecting the resistance of
+the atmosphere, the system is conservative.  From the conservation
+theorem for potential plus kinetic energy, show that the escape
+velocity for Earth ignoring the presence of the moon is $11.2
+\kilometer/\second$.
+
+\subsection*{Solution}
+The gravitational force is given by the equation
+\[\force_g = \frac{Gm_1m_2}{r^2}\]
+We can then rely on the equation
+\[ \dotprod{\force}{d\disp} = -dV \]
+As there are no dissipative forces in play, we can substitute $\disp =
+\radius$ and integrate to arrive at
+\begin{align*}
+  V_g
+  &=
+  \int d\radius\force_g \\
+  &=
+  \int \frac{Gm_1m_2}{r^2}dr \\
+  &=
+  -\frac{Gm_1m_2}{r} + C_g
+\end{align*}
+Set the $m_1$ to the mass of the particle, and $m_2$ to the mass of
+the Earth $m_E$
+\[ \frac{1}{2}mv^2 - \frac{Gmm_E}{r} + C_g  = E\]
+Set the integration constant equal to the total energy, giving us
+\begin{align*}
+  \frac{1}{2}mv^2 &= \frac{Gmm_E}{r} \\
+  \frac{1}{2}v^2 &= \frac{Gm_E}{r} \\
+  v^2 &= \frac{2Gm_E}{r} \\
+  v &= \sqrt{\frac{2Gm_E}{r}} \\
+\end{align*}
+Applying $G = 6.67408\cdot 10^{-11}
+\frac{\meter^3}{\dotprod{\kilogram}{\second^2}}$, $m_E =
+\dotprod{5.97219}{10^{24}} \kilogram$, and $\dotprod{6.371}{10^3}
+\kilometer = \dotprod{6.371}{10^6} \meter$
+\[\sqrt{\frac{\dotprod{2}{\dotprod{\dotprod{6.67408}{10^{-11}\frac{\meter^3}{\dotprod{\kilogram}{\second^2}}}}{\dotprod{5.97219}{10^{24}} \kilogram}}}{\dotprod{6.3
+71}{10^6} \meter}} = \dotprod{11.2}{10^3}\meter/\second = 11.2\kilometer/\second\]
