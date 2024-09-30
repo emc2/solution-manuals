@@ -1,0 +1,37 @@
+Two points of mass are joined by a rigid weightless rod of length $l$,
+the center of which is constrained to move on a circle of radius $a$.
+Express the kinetic energy in generalized coordinates.
+
+\subsection*{Solution}
+Let $m_1$ be the inner mass, $x_1, y_1$ at its position, $m_2$ be the
+outer mass and $x_2,y_2$ be the outer mass, and $x, y$ be the
+coordinates of the centerpoint.  Then we have
+\begin{align*}
+  x &= a\sin\theta \\
+  y &= a\cos\theta \\
+  \dot{x} &= -a\cos\dot{\theta} \\
+  \dot{y} &= a\sin\dot{\theta}
+\end{align*}
+We can then express $\dot{x_1},\dot{y_1}$ as
+\begin{align*}
+  \dot{x_1} &= -(a - l/2)\dot{\theta}\cos\theta \\
+  \dot{y_1} &= (a - l/2)\dot{\theta}\sin\theta
+\end{align*}
+and $\dot{x_2},\dot{y_2}$ as
+\begin{align*}
+  \dot{x_2} &= -(a + l/2)\dot{\theta}\cos\theta \\
+  \dot{y_2} &= (a + l/2)\dot{\theta}\sin\theta
+\end{align*}
+
+The kinetic energy is then
+\[
+\frac{1}{2}m_1((-(a - l/2)\dot{\theta}\cos\theta)^2 + ((a - l/2)\sin\theta)^2) +
+\frac{1}{2}m_2((-(a + l/2)\dot{\theta}\cos\theta)^2 + ((a + l/2)\sin\theta)^2)
+\]
+\[
+=\frac{1}{2}m_1(a - l/2)^2\dot{\theta}^2(\cos^2\theta + \sin^2\theta) +
+\frac{1}{2}m_2(a + l/2)^2\dot{\theta}^2(\cos^2\theta + \sin^2\theta)
+\]
+\[
+=\frac{1}{2}(m_1(a - l/2)^2 + m_2(a + l/2)^2)\dot{\theta}^2
+\]

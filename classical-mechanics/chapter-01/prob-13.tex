@@ -1,0 +1,131 @@
+Rockets are propelled by the momentum reaction of the exhaust gases
+expelled from the tail.  Since these gases arise from the reaction of
+the fuels carried in the rocket, the mass of the rocket is not
+constant, but decreases as the fuel is expended.  Show that the
+equation of motion for a rocket projected vertically upward in a
+uniform gravitational field neglecting atmospheric friction is
+\[m\deriv{v}{t} = -v'\deriv{m}{t} - mg\]
+where $m$ is the mass of the rocket, and v' is the velocity of the
+escaping gases relative to the rocket.  Integrate this equation to
+obtain $v$ as a function of $m$, assuming a constant time rate of loss
+of mass.  Show, for a rocket starting initially from rest, with $v'$
+equal to $2.1 \kilometer/\second$ and a mass loss per second equal to
+1/60th of the initial mass, that in order to reach the escape velocity
+the ratio of the weight of the fuel to the weight of the empty rocket
+must be almost 300.
+
+\subsection*{Solution}
+We need a Lagrangian with two parameters: $y$ and $m$, since both
+vary.  We have
+\[ L = \frac{1}{2}m\dot{y}^2 + gmy \]
+
+Now, find the key derivatives
+\begin{align*}
+  \partderiv{L}{y}
+  &=
+  \partderivop{y}\frac{1}{2}m\dot{y}^2 + \partderivop{y}gmy \\
+  &=
+  gm
+\end{align*}
+\begin{align*}
+  \partderiv{L}{\dot{y}}
+  &=
+  \partderivop{\dot{y}}\frac{1}{2}m\dot{y}^2 - \partderivop{\dot{y}}gmy \\
+  &=
+  m\dot{y}
+\end{align*}
+\begin{align*}
+  \derivop{t}\partderiv{L}{\dot{y}}
+  &=
+  \derivop{t}m\dot{y} \\
+  &=
+  \dot{m}\dot{y} + m\ddot{y}
+\end{align*}
+\begin{align*}
+  \partderiv{L}{m}
+  &=
+  \partderivop{m}\frac{1}{2}m\dot{y}^2 - \partderivop{m}gmy \\
+  &=
+  \frac{1}{2}\dot{y}^2 - gy
+\end{align*}
+\begin{align*}
+  \partderiv{L}{\dot{m}}
+  &=
+  \partderivop{\dot{m}}\frac{1}{2}m\dot{y}^2 - \partderivop{\dot{m}}gmy \\
+  &= 0
+\end{align*}
+We also have a force in the form of the escaping gases.  We have
+\[\force = \deriv{\momentum}{t}\]
+The change in momentum of the gases at any point \emph{relative to the
+  absolute frame} is
+\[ \dot{m}(\dot{y} - v') \]
+(Note that the gases at any point in time are assumed to only have a
+\emph{rate of mass}, otherwise the derivative would have a term for
+$m\derivop{t}(\dot{y} - v')$) Therefore, we have
+\begin{align*}
+  Q_y
+  &=
+  \dot{m}(\dot{y} - v')\partderiv{y}{y} \\
+  &=
+  \dot{m}\dot{y} - \dot{m}v'
+\end{align*}
+and
+\begin{align*}
+  Q_y
+  &=
+  \dot{m}(\dot{y} - v')\partderiv{y}{m} \\
+  &=
+  0
+\end{align*}
+
+This gives us two Lagrange equations:
+\[ \dot{m}\dot{y} + m\ddot{y} + gm = \dot{m}\dot{y} - \dot{m}v' \]
+and
+\[\ gy - \frac{1}{2}\dot{y}^2 = 0 \]
+
+The first equation can be rewritten as
+\begin{align*}
+  \dot{m}\dot{y} + m\ddot{y} + gm &= \dot{m}\dot{y} - \dot{m}v' \\
+  m\ddot{y} &= -\dot{m}v' - gm \\
+  m\deriv{v}{t} &= -\deriv{m}{t}v' - gm
+  \deriv{v}{t} &= -\deriv{m}{t}\frac{v'}{m} - gm
+\end{align*}
+
+Rewrite this equation, showing mass as a function of time, as
+\[ \deriv{v}{t} = -v'\deriv{m(t)}{t}\frac{1}{m(t)} - g\]
+Integrate to get an equation for velocity
+\begin{align*}
+  \int \ddot{y}dt
+  &=
+  -v'\int \deriv{m}{t}\frac{1}{m(t)}dt - \int g dt \\
+  \dot{y} &= -v'\ln{m(t)} + C - gt
+\end{align*}
+Now, since $\dot{y} = 0$ when $t = 0$, we find that $C = v'\ln{m(0)}$,
+giving us
+\[ \dot{y} = -v'\ln{\frac{m(t)}{m(0)}} - gt \]
+
+For the minimum amount of fuel to be used, we consume the entirety of
+it reaching escape velocity.  Therefore, let $m_0$ be the initial
+mass, and $m_f$ be the final.  Under a constant burn rate, we have
+\[ m(t) = m_0 - \dot{m}t \]
+If we set $m(t) = m_f$, then we get
+\[t = \frac{m_0 - m_f}{\dot{m}}\]
+which gives us
+\[ \dot{y} = -v'\ln{\frac{m_f}{m_0}} - g\frac{m_0 - m_f}{\dot{m}} \]
+We can rewrite this as
+\begin{align*}
+  \ln{\frac{m_f}{m_0}} &= -\frac{\dot{y}}{v'} - g\frac{m_0 - m_f}{\dot{m}v'} \\
+  \frac{m_f}{m_0} &= e^{-\frac{\dot{y}}{v'} - g\frac{m_0 - m_f}{\dot{m}v'}}
+\end{align*}
+Now, we can approximate by letting $m_0 - m_f = m_0$.  We can further
+simplify things by rescaling so that $m_0 = 1$ and $m_f$ is now the
+fraction of the non-fuel mass.  This gives us
+\[ m_f = e^{-\frac{\dot{y}}{v'} - \frac{g}{\dot{m}v'}} \]
+Applying concrete values here gives us
+\[ e^{-\frac{11.2 \kilometer/\second}{2.1 \kilometer/\second} - \frac{9.8 \meter/\second^2}{\innerprod{1.6\times 10^{-2} \second^{-1}}{2.1 \times 10^3 \meter/\second}}}\]
+\[ e^{-5.33 - \frac{9.8 \meter/\second^2}{3.36 \times 10 \meter/\second^2}}\]
+\[ e^{-5.33 - 0.291}\]
+\[ e^{-5.621}\]
+\[ 0.00362 \]
+Taking the fuel to non-fuel ratio, we get
+\[\frac{1-0.00362}{0.00362} = 275.24\]
