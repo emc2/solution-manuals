@@ -1,0 +1,30 @@
+Suppose $\ket{i}$ and $\ket{j}$ are eigenkets of some Hermitian
+operator A.  Under what condition can we conclude that $\ket{i} +
+\ket{j}$ is also an eigenket of A?
+
+\subsection*{Solution}
+Since all eigenkets are orthogonal or collinear, if $\ket{i}$ and
+$\ket{j}$ are eigenkets and $\ket{i} + \ket{j}$ is also an eigenket,
+then it must be true that
+\[ \ket{j} = c\ket{i} \]
+for constant $c\in\reals$.
+
+To derive $c$, note that
+\begin{align*}
+  A\ket{i} &= c_i\ket{i} \\
+  A\ket{j} &= c_j\ket{j}
+\end{align*}
+where $c_i,c_j\in\reals$.  If $\ket{i} + \ket{j}$ is an eigenket, then
+there must also exist $c_{ij}\in\reals$ such that
+\[A(\ket{i} + \ket{j}) = c_{ij}(\ket{i} + \ket{j})\]
+We can rewrite this as
+\begin{align*}
+  A(\ket{i} + A\ket{j}) &= c_{ij}(\ket{i} + \ket{j}) \\
+  A\ket{i} + A\ket{j} &= c_{ij}\ket{i} + c_{ij}\ket{j} \\
+  c_i\ket{i} + c_j\ket{j} &= c_{ij}\ket{i} + c_{ij}\ket{j} \\
+  c_i\ket{i} - c_{ij}\ket{i} &= c_{ij}\ket{j} - c_j\ket{j} \\
+  (c_i - c_{ij})\ket{i} &= (c_{ij} - c_{j})\ket{j} \\
+  \ket{i} &= \frac{c_{ij} - c_{j}}{c_i - c_{ij}}\ket{j}
+\end{align*}
+This gives us the above statement if we set $c$ to be $\frac{c_{ij} -
+  c_{j}}{c_i - c_{ij}}$.

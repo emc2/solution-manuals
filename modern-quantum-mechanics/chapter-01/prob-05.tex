@@ -1,0 +1,63 @@
+\begin{itemize}
+\item[(a)] Consider two kets $\ket{\alpha}$ and $\ket{\beta}$.  Suppose
+  $\innerprod{a'}{\alpha}, \innerprod{a''}{\alpha}, \ldots$ and
+  $\innerprod{a'}{\beta}, \innerprod{a''}{\beta}, \ldots$ are all
+  known, where $\ket{a'},\ket{a''},\ldots$ form a complete basis.
+  Find the matrix representation of the operator
+  $\outerprod{\alpha}{\beta}$ in that basis.
+\item[(b)] We will now consider a spin $\frac{1}{2}$ system and let
+  $\ket{\alpha}$ and $\ket{\beta}$ be $\ket{s_z = \hbar/2}$ and $\ket{s_x
+  = \hbar/2}$ respectively.  Write down explicitly the square matrix that
+  corresponds to $\outerprod{\alpha}{\beta}$ in the usual ($s_z$
+  diagonal) basis.
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{itemize}
+\item[(a)] Let $a_1 = a', a_2 = a'', \ldots$ for all basis elements,
+  then expand
+  \[ \outerprod{\alpha}{\beta} \]
+  as
+  \[ \sum_i\sum_j\ket{a_i}\innerprod{a_i}{\alpha}\innerprod{\beta}{a_j}\bra{a_j} \]
+  If we let
+  \[ \innerprodop{a_i}{X}{a_j} = \innerprod{a_i}{\alpha}\innerprod{\beta}{a_j} =\innerprod{a_i}{\alpha}\innerprod{a_j}{\beta}^* \]
+  then we can put the above expression into the form
+  \[ \sum_i\sum_j\ket{a_i}\innerprodop{a_i}{X}{a_j}\bra{a_j} \]
+  which gives us the entries for the matrix $X$, namely, that
+  \begin{equation*}
+    X =
+    \begin{bmatrix}
+      \innerprod{a'}{\alpha}\innerprod{a'}{\beta}^* & \innerprod{a'}{\alpha}\innerprod{a''}{\beta}^* & \cdots \\
+      \innerprod{a''}{\alpha}\innerprod{a'}{\beta}^* & \innerprod{a''}{\alpha}\innerprod{a''}{\beta}^* & \cdots \\
+      \vdots  & \vdots  & \ddots
+    \end{bmatrix}
+  \end{equation*}
+
+
+\item[(b)] Take $\ket{S_z = \hbar/2}$ and $\ket{S_x = \hbar/2}$ to be
+  $\ket{S_z;\plus}$ and $\ket{S_x; \plus}$ respectively.  Then in the
+  $\ket{\plus},\ket{\minus}$ basis, we have
+  \begin{align*}
+    \ket{S_x;\plus} &= \frac{1}{\sqrt{2}}(\ket{\plus} + \ket{\minus}) \\
+    \ket{S_z;\plus} &= \ket{\plus}
+  \end{align*}
+
+  The matrix then is
+  \[
+  \begin{bmatrix}
+    \innerprod{\plus}{S_z;\plus}\innerprod{\plus}{S_x;\plus}^* &
+    \innerprod{\plus}{S_z;\plus}\innerprod{\minus}{S_x;\plus}^* \\
+
+    \innerprod{\minus}{S_z;\plus}\innerprod{\plus}{S_x;\plus}^* &
+    \innerprod{\minus}{S_z;\plus}\innerprod{\minus}{S_x;\plus}^*
+  \end{bmatrix}
+  \]
+  which is
+  \[
+  \begin{bmatrix}
+    \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+    0 & 0
+  \end{bmatrix}
+  \]
+\end{itemize}

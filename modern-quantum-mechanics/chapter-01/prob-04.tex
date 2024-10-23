@@ -1,0 +1,169 @@
+Using the rules of bra-ket algebra, prove or evaluate the following:
+\begin{itemize}
+\item[(a)] $\trace{XY} = \trace{YX}$
+\item[(b)] $\adjoint{(XY)} = \adjoint{Y}\adjoint{X}$
+\item[(c)] $\exp{[i\cdot f(A)]} =$ ? in ket-bra form, where $A$ is a Hermitian
+  operator whose eigenvalues are known
+\item[(d)]$\sum_{a'}\psi_{a'}^*(\physvec{x'})\psi_{a'}(\physvec{x''})$, where
+  $\psi_{a'}(\physvec{x'}) = \innerprod{\physvec{x'}}{a'}$
+\end{itemize}
+
+\subsection*{Solution}
+\begin{itemize}
+\item[(a)] Rewrite as
+  \begin{align*}
+    \trace{XY} &= \trace{YX} \\
+    &=
+    \sum_{a_i} \innerprodop{a_i}{YX}{a_i} \\
+    &=
+    \sum_{a_i}\sum_{a_j} \innerprodop{a_i}{Y}{a_j}\innerprodop{a_j}{X}{a_i}\\
+    &=
+    \sum_{a_i}\sum_{a_j} \innerprodop{a_j}{X}{a_i}\innerprodop{a_i}{Y}{a_j}\\
+    &=
+    \sum_{a_j} \innerprodop{a_j}{XY}{a_j}\\
+    &=
+    \trace{XY}
+  \end{align*}
+\item[(b)] Rewrite $X$ and $Y$ as
+  \begin{align*}
+    X &= \sum_{x_i}\sum_{x_j}\outerprod{x_i}{x_i}X\outerprod{x_j}{x_j} \\
+    Y &= \sum_{y_k}\sum_{y_l}\outerprod{y_k}{y_k}Y\outerprod{y_l}{y_l}
+  \end{align*}
+  Then
+  \[
+  XY
+  =
+  \sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+  \outerprod{x_i}{x_i}X\ket{x_j}
+  \innerprod{x_j}{y_k}\bra{y_k}Y
+  \outerprod{y_l}{y_l}
+  \]
+  Now rewrite $\adjoint{(XY)}$ as follows:
+  \begin{align*}
+    \adjoint{(XY)}
+    &=
+    \adjoint{\left(\sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+      \outerprod{x_i}{x_i}X\ket{x_j}
+      \innerprod{x_j}{y_k}\bra{y_k}Y
+      \outerprod{y_l}{y_l}\right)} \\
+    &=
+    \sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+    \adjoint{(\outerprod{x_i}{x_i}X\ket{x_j}
+      \innerprod{x_j}{y_k}\bra{y_k}Y
+      \outerprod{y_l}{y_l})} \\
+    &=
+    \sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+    \adjoint{(\bra{x_i}X\ket{x_j}
+      \innerprod{x_j}{y_k}\bra{y_k}Y\ket{y_l}
+      \outerprod{x_i}{y_l})} \\
+    &=
+    \sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+    \adjoint{\bra{x_i}X\ket{x_j}}
+    \adjoint{\innerprod{x_j}{y_k}}
+    \adjoint{\bra{y_k}Y\ket{y_l}}
+    \adjoint{\outerprod{x_i}{y_l}} \\
+    &=
+    \sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+    \bra{x_j}\adjoint{X}\ket{x_i}
+    \innerprod{y_k}{x_j}\bra{y_l}
+    \adjoint{Y}\ket{y_k}\outerprod{y_l}{x_i} \\
+    &=
+    \sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+    \bra{y_l}\adjoint{Y}\ket{y_k}
+    \innerprod{y_k}{x_j}\bra{x_j}
+    \adjoint{X}\ket{x_i}\outerprod{y_l}{x_i} \\
+    &=
+    \sum_{x_i}\sum_{x_j}\sum_{y_k}\sum_{y_l}
+    \outerprod{y_l}{y_l}\adjoint{Y}
+    \ket{y_k}\innerprod{y_k}{x_j}\bra{x_j}
+    \adjoint{X}\outerprod{x_i}{x_i} \\
+    &=
+    \adjoint{Y}\adjoint{X}
+  \end{align*}
+\item[(c)] First, show that for any analytic $f$, and any eigenket
+  $\ket{a}$ of $A$ such that $A\ket{a} = a\ket{a}$
+  \[ f(A) = \sum_i f(a_i)\outerprod{a_i}{a_i} \]
+  If $f$ is analytic, then we can write it as an infinite sum of the form
+  \[ f(A) = \sum_n^{\infty} \alpha_n(A - A_0)^n \]
+  for any $A_0$.  If we pick $A_0 = 0$, then we have
+  \[ f(A) = \sum_n^{\infty} \alpha_n A^n \]
+  We can rewrite $A$ as
+  \begin{align*}
+    A
+    &=
+    \sum_i A\outerprod{a_i}{a_i} \\
+    &=
+    \sum_i a_i\outerprod{a_i}{a_i} \\
+    &=
+    \sum_i a_i^1\outerprod{a_i}{a_i}
+  \end{align*}
+  Now assume that
+  \[ A^n = \sum_i a_i^n\outerprod{a_i}{a_i} \]
+  Then we have
+  \begin{align*}
+    A^{n+1} &= A^n A \\
+    &=
+    \left(\sum_i a_i^n\outerprod{a_i}{a_i}\right)
+    \left(\sum_j a_j\outerprod{a_j}{a_j}\right) \\
+    &=
+    \sum_i\sum_j a_i^n a_j\doubleouterprod{a_i}{a_i}{a_j}{a_j} \\
+    &=
+    \sum_i a_i^n a_i\doubleouterprod{a_i}{a_i}{a_i}{a_i} \\
+    &=
+    \sum_i a_i^{n+1}\outerprod{a_i}{a_i}
+  \end{align*}
+  Therefore, by induction over natural numbers, we have
+  \[ A^n = \sum_i a_i^{n}\outerprod{a_i}{a_i} \]
+
+  Now rewrite the power series according to this
+  \begin{align*}
+    f(A)
+    &=
+    \sum_n^{\infty} \alpha_n A^n \\
+    &=
+    \sum_n^{\infty}\sum_i \alpha_n a_i^n\outerprod{a_i}{a_i} \\
+    &=
+    \sum_i\sum_n^{\infty} \alpha_n a_i^n\outerprod{a_i}{a_i} \\
+    &=
+    \sum_i f(a_i)\outerprod{a_i}{a_i}
+  \end{align*}
+
+  Now, $\exp$ is analytic.  If we assume $f$ to be as well, then we have
+  \[ \exp{[i\cdot f(A)]} = \sum_i\exp{[i\cdot f(a_i)]}\outerprod{a_i}{a_i} \]
+
+\item[(d)] First, note that
+  \begin{align*}
+    \psi_{a'}^*(\physvec{x'}) &= \innerprod{\physvec{x'}}{a'}^* \\
+    &=
+    \innerprod{a'}{\physvec{x'}}
+  \end{align*}
+
+  Then,
+  \begin{align*}
+    \sum_{a'}\psi_{a'}^*(\physvec{x'})\psi_{a'}(\physvec{x''})
+    &=
+    \sum_{a'}\innerprod{a'}{\physvec{x'}}\innerprod{\physvec{x''}}{a'} \\
+    &=
+    \trace{\outerprod{\physvec{x'}}{\physvec{x''}}}
+  \end{align*}
+  also,
+  \begin{align*}
+    \sum_{a'}\innerprod{a'}{\physvec{x'}}\innerprod{\physvec{x''}}{a'}
+    &=
+    \doubleadjoint{\left(\sum_{a'}\innerprod{a'}{\physvec{x'}}
+      \innerprod{\physvec{x''}}{a'}\right)} \\
+    &=
+    \adjoint{\left(\sum_{a'}\adjoint{(\innerprod{a'}{\physvec{x'}}
+        \innerprod{\physvec{x''}}{a'})}\right)} \\
+    &=
+    \adjoint{\left(\sum_{a'}\adjoint{\innerprod{a'}{\physvec{x'}}}
+      \adjoint{\innerprod{\physvec{x''}}{a'}}\right)} \\
+    &=
+    \adjoint{\left(\sum_{a'}\innerprod{\physvec{x'}}{a'}
+      \innerprod{a'}{\physvec{x''}}\right)} \\
+    &=
+    \adjoint{\innerprod{\physvec{x'}}{\physvec{x''}}} \\
+    &=
+    \innerprod{\physvec{x''}}{\physvec{x'}}
+  \end{align*}
+\end{itemize}

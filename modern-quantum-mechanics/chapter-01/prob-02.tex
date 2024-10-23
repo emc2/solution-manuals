@@ -1,0 +1,130 @@
+Suppose a 2 x 2 matrix $X$ (not necessarily Hermitian or unitary) is
+written as
+\[ X = a_0 + \dotprod{\physvec{\sigma}}{\physvec{a}}\]
+where $a_0$ and $a_{1,2,3}$ are numbers.
+\begin{itemize}
+  \item[(a)] How are $a_0$ and $a_{k}$ ($k = 1,2,3$) related to
+    $\trace{X}$ and $\trace{\sigma_k X}$
+  \item[(b)] Obtain $a_0$ and $a_k$ in terms of the matrix elements $X_{ij}$
+\end{itemize}
+
+\subsection*{Solution}
+Note that this problem is very poorly written and unclear, and that
+the math defining $\sigma_i$ and
+$\dotprod{\physvec{\sigma}}{\physvec{a}}$ is not defined until chapter
+3.
+
+The operators $\sigma_{1,2,3}$ are matrices of the form
+\[
+\sigma_1 =
+\begin{bmatrix}
+  0 & 1 \\
+  1 & 0
+\end{bmatrix},
+\sigma_2 =
+\begin{bmatrix}
+  0 & -i \\
+  i & 0
+\end{bmatrix},
+\sigma_3 =
+\begin{bmatrix}
+  1 & 0 \\
+  0 & -1
+\end{bmatrix},
+\]
+Note that in each of these cases, $\trace{\sigma_i} = 0$.  Also note the following products:
+\[
+\sigma_1\sigma_2 =
+\begin{bmatrix}
+  i & 0 \\
+  0 & -i
+\end{bmatrix},
+\sigma_1\sigma_3 =
+\begin{bmatrix}
+  0 & -1 \\
+  1 & 0
+\end{bmatrix},
+\sigma_2\sigma_3 =
+\begin{bmatrix}
+  0 & i \\
+  i & 0
+\end{bmatrix},
+\sigma_2\sigma_1 =
+\begin{bmatrix}
+  -i & 0 \\
+  0 & i
+\end{bmatrix},
+\sigma_3\sigma_1 =
+\begin{bmatrix}
+  0 & 1 \\
+  -1 & 0
+\end{bmatrix},
+\sigma_2\sigma_3 =
+\begin{bmatrix}
+  0 & -i \\
+  -i & 0
+\end{bmatrix}
+\]
+all of which have trace 0.  Finally, note that the squares of all
+these are equal to the identity matrix.
+
+The term $\dotprod{\physvec{\sigma}}{\physvec{a}}$ is a matrix of the form
+
+\[
+\sum_k a_k\sigma_k =
+\begin{bmatrix}
+  a_3 & a_1 - ia_2 \\
+  a_1 + ia_2 & -a_3
+\end{bmatrix}
+\]
+
+and scalar addition of $a_0$ to a matrix
+$\dotprod{\physvec{\sigma}}{\physvec{a}}$ is defined as
+\[ a_0I + \dotprod{\physvec{\sigma}}{\physvec{a}} \]
+
+\begin{itemize}
+\item[(a)]
+  For \trace{X}, we have
+  \begin{align*}
+    \trace{X} &= \trace{a_0I + \dotprod{\physvec{\sigma}}{\physvec{a}}} \\
+    &= \trace{a_0I} + \trace{\dotprod{\physvec{\sigma}}{\physvec{a}}} \\
+    &= 2a_0 + \trace{\sum_k a_k\sigma_k} \\
+    &= 2a_0 + \sum_k a_k\trace{\sigma_k} \\
+    &= 2a_0
+  \end{align*}
+
+  For $\trace{\sigma_k X}$, we have
+  \begin{align*}
+    \trace{\sigma_k X} &= \trace{\sigma_k a_0I +
+      \sigma_k\dotprod{\physvec{\sigma}}{\physvec{a}}} \\
+    &= \trace{\sigma_k a_0I} +
+      \trace{\sigma_k\dotprod{\physvec{\sigma}}{\physvec{a}}} \\
+    &= a_0\trace{\sigma_k} +
+      \trace{\sigma_k\sum_j a_j\sigma_j} \\
+    &= \sum_j a_j\trace{\sigma_k\sigma_j} \\
+    &= a_k\trace{\sigma_k^2} + \sum_{j\neq k} a_j\trace{\sigma_k\sigma_j} \\
+    &= a_k\trace{I} \\
+    &= 2a_k \\
+  \end{align*}
+\item[(b)] Use the results of the first part:
+  \begin{align*}
+    2a_0 &= \trace{X} \\
+    a_0 &= \frac{1}{2}\trace{X} \\
+    a_0 &= \frac{X_{1,1} + X_{2,2}}{2}
+  \end{align*}
+  \begin{align*}
+    2a_1 &= \trace{\sigma_1 X} \\
+    a_1 &= \frac{1}{2}\trace{\sigma_1 X} \\
+    a_1 &= \frac{X_{1,2} + X_{2,1}}{2}
+  \end{align*}
+  \begin{align*}
+    2a_2 &= \trace{\sigma_2 X} \\
+    a_2 &= \frac{1}{2}\trace{\sigma_2 X} \\
+    a_2 &= \frac{-iX_{1,2} + iX_{2,1}}{2}
+  \end{align*}
+  \begin{align*}
+    2a_3 &= \trace{\sigma_3 X} \\
+    a_3 &= \frac{1}{2}\trace{\sigma_3 X} \\
+    a_3 &= \frac{X_{1,1} - X_{2,2}}{2}
+  \end{align*}
+\end{itemize}

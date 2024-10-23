@@ -1,0 +1,74 @@
+Show that the determinant of a 2 x 2 matrix
+$\dotprod{\physvec{\sigma}}{\physvec{a}}$ is invariant under the
+transform
+\[
+\dotprod{\physvec{\sigma}}{\physvec{a}}
+\rightarrow \dotprod{\physvec{\sigma}}{\physvec{a'}}
+\equiv
+\exp\left(\frac{\dotprod{i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+\physvec{\sigma}
+\cdot
+\physvec{a}
+\exp\left(\frac{\dotprod{-i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+\]
+Find $a_k'$ in terms of $a_k$ when $\physvec{\hat{n}}$ is in the positive
+z-direction and interpret your result.
+
+\subsection*{Solution}
+
+The easiest way to resolve the question about determinants is to use
+the property
+\[\det{(ABC)} = \det{(A)}\det{(B)}\det{(C)}\]
+
+We can then rewrite as follows:
+\begin{align*}
+  \det{\left[
+  \exp\left(\frac{\dotprod{i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \physvec{\sigma} \cdot \physvec{a}
+  \exp\left(\frac{\dotprod{-i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \right]}
+  &=
+  \det{\left[
+  \exp\left(\frac{\dotprod{i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \right]}
+  \det{\left[
+  \physvec{\sigma} \cdot \physvec{a}
+  \right]}
+  \det{\left[
+  \exp\left(\frac{\dotprod{-i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \right]} \\
+  &=
+  \det{\left[
+  \exp\left(\frac{\dotprod{i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \right]}
+  \det{\left[
+  \exp\left(\frac{\dotprod{-i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \right]}
+  \det{\left[
+  \physvec{\sigma} \cdot \physvec{a}
+  \right]}  \\
+  &=
+  \det{\left[
+  \exp\left(\frac{\dotprod{i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \exp\left(\frac{\dotprod{-i\physvec{\sigma}}{\physvec{\hat{n}}\phi}}{2}\right)
+  \right]}
+  \det{\left[
+  \physvec{\sigma} \cdot \physvec{a}
+  \right]}  \\
+  &=
+  \det{\left[
+  \exp\left(0\right)
+  \right]}
+  \det{\left[
+  \physvec{\sigma} \cdot \physvec{a}
+  \right]}  \\
+  &=
+  \det{[I]}
+  \det{\left[
+  \physvec{\sigma} \cdot \physvec{a}
+  \right]}  \\
+  &=
+  \det{\left[
+  \physvec{\sigma} \cdot \physvec{a}
+  \right]}
+\end{align*}
