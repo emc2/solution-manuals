@@ -1,0 +1,165 @@
+Construct $\ket{\dotprod{\physvec{S}}{\physvec{\hat{n}}}; \plus}$ such that
+\[
+\dotprod{\physvec{S}}{\physvec{\hat{n}}}
+\ket{\dotprod{\physvec{S}}{\physvec{\hat{n}}}; \plus}
+=
+\left(\frac{\hbar}{2}\right)
+\ket{\dotprod{\physvec{S}}{\physvec{\hat{n}}}; \plus}
+\]
+where $\physvec{\hat{n}}$ is characterized by a polar angle $\beta$ and
+azimuthal angle $\alpha$.  Express your answer as a linear combination
+of $\ket{\plus}$ and $\ket{\minus}$
+
+\subsection*{Solution}
+
+Stating $\physvec{\hat{n}}$ in terms of the cartesian projection for
+spherical coordinates gives us $[ \sin\beta\cos\alpha,
+  \sin\beta\sin\alpha, \cos\beta ]$.  If we take $\physvec{S} = [S_x,
+  S_y, S_z]$, then we get
+\[
+\dotprod{\physvec{S}}{\physvec{\hat{n}}} =
+\sin\beta\cos\alpha S_x
++\sin\beta\sin\alpha S_y
++\cos\beta S_z
+\]
+Now take the values of $S_x$, $S_y$, and $S_z$:
+\begin{align*}
+  S_x &= \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus}) \\
+  S_y &= \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus}) \\
+  S_z &= \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus})
+\end{align*}
+Now combine the two:
+\begin{align*}
+  \dotprod{\physvec{S}}{\physvec{\hat{n}}}
+  &=
+  \frac{\hbar}{2}\sin\beta\cos\alpha\outerprod{\plus}{\minus}
+  +\frac{\hbar}{2}\sin\beta\cos\alpha\outerprod{\minus}{\plus} \\
+  &+\frac{i\hbar}{2}\sin\beta\sin\alpha\outerprod{\minus}{\plus}
+  -\frac{i\hbar}{2}\sin\beta\sin\alpha\outerprod{\plus}{\minus} \\
+  &+\frac{\hbar}{2}\cos\beta\outerprod{\plus}{\plus}
+  -\frac{\hbar}{2}\cos\beta\outerprod{\minus}{\minus} \\
+  &=
+  \frac{\hbar}{2}\sin\beta(\cos\alpha + i\sin\alpha)\outerprod{\plus}{\minus}
+  +\frac{\hbar}{2}\sin\beta(\cos\alpha - i\sin\alpha)\outerprod{\minus}{\plus} \\
+  &+ \frac{\hbar}{2}\cos\beta\outerprod{\plus}{\plus}
+  -\frac{\hbar}{2}\cos\beta\outerprod{\minus}{\minus} \\
+  &=
+  \frac{\hbar}{2}\cos\beta\outerprod{\plus}{\plus}
+  -\frac{\hbar}{2}\cos\beta\outerprod{\minus}{\minus}
+  +\frac{\hbar}{2}e^{i\alpha}\sin\beta\outerprod{\plus}{\minus}
+  +\frac{\hbar}{2}e^{-i\alpha}\sin\beta\outerprod{\minus}{\plus}
+\end{align*}
+The matrix form of this is
+\[
+\frac{\hbar}{2}
+\begin{bmatrix}
+  \cos\beta & e^{-i\alpha}\sin\beta \\
+  e^{i\alpha}\sin\beta & -\cos\beta \\
+\end{bmatrix}
+\]
+Now find the eigenvalues:
+\[
+\left|
+\begin{bmatrix}
+  \frac{\hbar}{2}\cos\beta - \lambda & \frac{\hbar}{2}e^{-i\alpha}\sin\beta \\
+  \frac{\hbar}{2}e^{i\alpha}\sin\beta & -\frac{\hbar}{2}\cos\beta - \lambda \\
+\end{bmatrix}
+\right|
+= 0
+\]
+This gives us:
+\begin{align*}
+  \left(\frac{\hbar}{2}\cos\beta - \lambda\right)
+  \left(-\frac{\hbar}{2}\cos\beta - \lambda\right)
+  -\frac{\hbar}{2}e^{i\alpha}\sin\beta
+  \frac{\hbar}{2}e^{-i\alpha}\sin\beta &= 0 \\
+  \left(\frac{\hbar}{2}\cos\beta - \lambda\right)
+  \left(\frac{\hbar}{2}\cos\beta + \lambda\right)
+  +\frac{\hbar^2}{4}\sin^2\beta &= 0 \\
+  \frac{\hbar^2}{4}\cos^2\beta + \frac{\hbar^2}{4}\sin^2\beta &= \lambda^2 \\
+  \frac{\hbar^2}{4}(\cos^2\beta + \sin^2\beta) &= \lambda^2 \\
+  \pm\frac{\hbar}{2} &= \lambda \\
+\end{align*}
+
+Now find the eigenvectors by solving
+\[
+\begin{bmatrix}
+  \frac{\hbar}{2}\cos\beta - \lambda & \frac{\hbar}{2}e^{-i\alpha}\sin\beta \\
+  \frac{\hbar}{2}e^{i\alpha}\sin\beta & -\frac{\hbar}{2}\cos\beta - \lambda \\
+\end{bmatrix}
+\begin{bmatrix}
+  k_{\plus} \\
+  k_{\minus}
+\end{bmatrix}
+=
+\pm\frac{\hbar}{2}
+\begin{bmatrix}
+  k_{\plus} \\
+  k_{\minus}
+\end{bmatrix}
+\]
+For $\frac{\hbar}{2}$, we get the
+following equations:
+\begin{align*}
+  \frac{\hbar}{2}\cos\beta k_{\plus}
+  +\frac{\hbar}{2}e^{-i\alpha}\sin\beta k_{\minus} &=
+  \frac{\hbar}{2}k_{\plus} \\
+  \frac{\hbar}{2}e^{i\alpha}\sin\beta k_{\plus}
+  -\frac{\hbar}{2}\cos\beta k_{\minus} &=
+  \frac{\hbar}{2}k_{\minus} \\
+\end{align*}
+We can factor out the $\frac{\hbar}{2}$ and move everything to the
+left side to get
+\begin{align*}
+  e^{-i\alpha}\sin\beta k_{\minus} - (1 - \cos\beta)k_{\plus} &= 0 \\
+  e^{i\alpha}\sin\beta k_{\plus} - (1 + \cos\beta)k_{\minus} &= 0 \\
+\end{align*}
+Combining these gives us
+\begin{align*}
+  e^{i\alpha}\sin\beta k_{\plus} + (1 - \cos\beta)k_{\plus} &=
+  e^{-i\alpha}\sin\beta k_{\minus} + (1 + \cos\beta)k_{\minus} \\
+  [e^{i\alpha}\sin\beta + (1 - \cos\beta)]k_{\plus} &=
+  [e^{-i\alpha}\sin\beta + (1 + \cos\beta)]k_{\minus} \\
+  \left[2e^{i\alpha}\cos\frac{\beta}{2}\sin\frac{\beta}{2} + 2\sin^2\frac{\beta}{2}\right]k_{\plus} &=
+  \left[2e^{-i\alpha}\cos\frac{\beta}{2}\sin\frac{\beta}{2} + 2\cos^2\frac{\beta}{2}\right]k_{\minus} \\
+  2\sin\frac{\beta}{2}\left[\sin\frac{\beta}{2} + e^{i\alpha}\cos\frac{\beta}{2}\right]k_{\plus} &=
+  2e^{-i\alpha}\cos\frac{\beta}{2}\left[\sin\frac{\beta}{2} + e^{i\alpha}\cos^\frac{\beta}{2}\right]k_{\minus} \\
+  e^{i\alpha}\sin\frac{\beta}{2}k_{\plus} &= \cos\frac{\beta}{2}k_{\minus} \\
+  \frac{k_{\plus}}{\cos\frac{\beta}{2}} - \frac{k_{\minus}}{e^{i\alpha}\sin\frac{\beta}{2}} &= 0 \\
+\end{align*}
+This is solved by $k_{\plus} = \cos\frac{\beta}{2}, k_{\minus} =
+e^{i\alpha}\sin\frac{\beta}{2}$, giving us the eigenket
+\[ \cos\frac{\beta}{2}\ket{\plus} + e^{i\alpha}\sin\frac{\beta}{2}\ket{\minus} \]
+
+For $-\frac{\hbar}{2}$ gives us the following equations:
+\begin{align*}
+  \frac{\hbar}{2}\cos\beta k_{\plus}
+  +\frac{\hbar}{2}e^{-i\alpha}\sin\beta k_{\minus} &=
+  -\frac{\hbar}{2}k_{\plus} \\
+  \frac{\hbar}{2}e^{i\alpha}\sin\beta k_{\plus}
+  -\frac{\hbar}{2}\cos\beta k_{\minus} &=
+  -\frac{\hbar}{2}k_{\minus} \\
+\end{align*}
+The same procedure as before gives us
+\begin{align*}
+  e^{-i\alpha}\sin\beta k_{\minus} + (1 + \cos\beta)k_{\plus} &= 0 \\
+  e^{i\alpha}\sin\beta k_{\plus} + (1 - \cos\beta)k_{\minus} &= 0 \\
+\end{align*}
+Combining these gives us
+\begin{align*}
+  e^{i\alpha}\sin\beta k_{\plus} - (1 + \cos\beta)k_{\plus} &=
+  e^{-i\alpha}\sin\beta k_{\minus} - (1 - \cos\beta)k_{\minus} \\
+  [e^{i\alpha}\sin\beta - (1 + \cos\beta)]k_{\plus} &=
+  [e^{-i\alpha}\sin\beta - (1 - \cos\beta)]k_{\minus} \\
+  \left[2e^{i\alpha}\cos\frac{\beta}{2}\sin\frac{\beta}{2} - 2\cos^2\frac{\beta}{2}\right]k_{\plus}
+  &=
+  \left[2e^{-i\alpha}\cos\frac{\beta}{2}\sin\frac{\beta}{2} - 2\sin^2\frac{\beta}{2}\right]k_{\minus} \\
+  -2\cos\frac{\beta}{2}\left[\sin\frac{\beta}{2} - e^{i\alpha}\cos\frac{\beta}{2}\right]k_{\plus}
+  &=
+  2e^{-i\alpha}\sin\frac{\beta}{2}\left[\sin\frac{\beta}{2} - e^{i\alpha}\cos^\frac{\beta}{2}\right]k_{\minus} \\
+  -e^{i\alpha}\cos\frac{\beta}{2}k_{\plus} &= \sin\frac{\beta}{2}k_{\minus} \\
+  \frac{k_{\plus}}{\sin\frac{\beta}{2}} + \frac{k_{\minus}}{e^{i\alpha}\cos\frac{\beta}{2}} &= 0 \\
+\end{align*}
+This is solved by $k_{\plus} = \sin\frac{\beta}{2}, k_{\minus} =
+-e^{i\alpha}\cos\frac{\beta}{2}$, giving us the eigenket
+\[ \sin\frac{\beta}{2}\ket{\plus} - e^{i\alpha}\cos\frac{\beta}{2}\ket{\minus} \]

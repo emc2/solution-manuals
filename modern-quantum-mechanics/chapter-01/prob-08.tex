@@ -1,0 +1,228 @@
+Using the orthogonality of $\ket{\plus}$ and $\ket{\minus}$, prove
+\begin{align*}
+  [S_i,S_j] &= i\epsilon_{i,j,k}\hbar S_k \\
+  \{S_i, S_j\} &= \left(\frac{\hbar^2}{2}\right)\delta_{ij}S_k
+\end{align*}
+where
+\begin{align*}
+  S_x
+  &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus}) \\
+  S_y
+  &=
+  \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus}) \\
+  S_z
+  &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus})
+\end{align*}
+
+\subsection*{Solution}
+Go ahead and derive the products
+\begin{align*}
+  S_{x}S_{x} &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus})
+  \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\plus}{\minus}{\plus}{\minus}
+  +\doubleouterprod{\plus}{\minus}{\minus}{\plus}
+  +\doubleouterprod{\minus}{\plus}{\plus}{\minus}
+  +\doubleouterprod{\minus}{\plus}{\minus}{\plus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\plus}{\plus} + \outerprod{\minus}{\minus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2 I
+\end{align*}
+\begin{align*}
+  S_{x}S_{y} &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus})
+  \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus}) \\
+  &=
+  i\left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\plus}{\minus}{\minus}{\plus}
+  -\doubleouterprod{\plus}{\minus}{\plus}{\minus}
+  +\doubleouterprod{\minus}{\plus}{\minus}{\plus}
+  -\doubleouterprod{\minus}{\plus}{\plus}{\minus}) \\
+  &=
+  i\left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus}) \\
+  &=
+  \frac{i\hbar}{2}S_z
+\end{align*}
+\begin{align*}
+  S_{x}S_{z} &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus})
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\plus}{\minus}{\plus}{\plus}
+  -\doubleouterprod{\plus}{\minus}{\minus}{\minus}
+  +\doubleouterprod{\minus}{\plus}{\plus}{\plus}
+  -\doubleouterprod{\minus}{\plus}{\minus}{\minus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\minus}{\plus} -\outerprod{\plus}{\minus}) \\
+  &=
+  -\frac{i\hbar}{2}S_y
+\end{align*}
+\begin{align*}
+  S_{y}S_{x} &=
+  \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus})
+  \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus}) \\
+  &=
+  i\left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\minus}{\plus}{\plus}{\minus}
+  -\doubleouterprod{\minus}{\plus}{\minus}{\plus}
+  + \doubleouterprod{\plus}{\minus}{\plus}{\minus}
+  - \doubleouterprod{\plus}{\minus}{\minus}{\plus}) \\
+  &=
+  i\left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\minus}{\minus} - \outerprod{\plus}{\plus}) \\
+  &=
+  -\frac{i\hbar}{2}S_z
+\end{align*}
+\begin{align*}
+  S_{y}S_{y} &=
+  \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus})
+  \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus}) \\
+  &=
+  -\left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\minus}{\plus}{\minus}{\plus}
+  -\doubleouterprod{\minus}{\plus}{\plus}{\minus}
+  - \doubleouterprod{\plus}{\minus}{\minus}{\plus}
+  + \doubleouterprod{\plus}{\minus}{\plus}{\minus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\minus}{\minus} + \outerprod{\plus}{\plus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2 I
+\end{align*}
+\begin{align*}
+  S_{y}S_{z} &=
+  \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus})
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus}) \\
+  &=
+  i\left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\minus}{\plus}{\plus}{\plus}
+  -\doubleouterprod{\minus}{\plus}{\minus}{\minus}
+  - \doubleouterprod{\plus}{\minus}{\plus}{\plus}
+  + \doubleouterprod{\plus}{\minus}{\minus}{\minus}) \\
+  &=
+  i\left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\minus}{\plus} + \outerprod{\plus}{\minus}) \\
+  &=
+  \frac{i\hbar}{2}S_x
+\end{align*}
+\begin{align*}
+  S_{z}S_{x} &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus})
+  \frac{\hbar}{2}(\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\plus}{\plus}{\plus}{\minus}
+  -\doubleouterprod{\plus}{\plus}{\minus}{\plus}
+  +\doubleouterprod{\minus}{\minus}{\plus}{\minus}
+  -\doubleouterprod{\minus}{\minus}{\minus}{\plus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\plus}{\minus} -\outerprod{\minus}{\plus}) \\
+  &=
+  \frac{i\hbar}{2}S_y
+\end{align*}
+\begin{align*}
+  S_{z}S_{y} &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus})
+  \frac{i\hbar}{2}(\outerprod{\minus}{\plus} - \outerprod{\plus}{\minus}) \\
+  &=
+  i\left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\plus}{\plus}{\minus}{\plus}
+  -\doubleouterprod{\plus}{\plus}{\plus}{\minus}
+  -\doubleouterprod{\minus}{\minus}{\minus}{\plus}
+  +\doubleouterprod{\minus}{\minus}{\plus}{\minus}) \\
+  &=
+  -i\left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\plus}{\minus} + \outerprod{\minus}{\plus}) \\
+  &=
+  -\frac{i\hbar}{2}S_x
+\end{align*}
+\begin{align*}
+  S_{z}S_{z} &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus})
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\doubleouterprod{\plus}{\plus}{\plus}{\plus}
+  -\doubleouterprod{\plus}{\plus}{\minus}{\minus}
+  -\doubleouterprod{\minus}{\minus}{\plus}{\plus}
+  +\doubleouterprod{\minus}{\minus}{\minus}{\minus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\plus}{\plus} + \outerprod{\minus}{\minus}) \\
+  &=
+  \left(\frac{\hbar}{2}\right)^2 I
+\end{align*}
+First, it is immediate that $[S_i, S_i] = 0$.  Since all
+\[
+S_iS_i =
+\left(\frac{\hbar}{2}\right)^2
+(\outerprod{\plus}{\plus} + \outerprod{\minus}{\minus})
+\]
+we have
+\begin{align*}
+  \{S_i, S_i\} &= S_iS_i + S_iS_i \\
+  &=
+  2\left(\frac{\hbar}{2}\right)^2
+  (\outerprod{\plus}{\plus} + \outerprod{\minus}{\minus}) \\
+  &=
+  \frac{\hbar^2}{2}I \\
+\end{align*}
+So the relation holds.
+
+For the anticommutator, it is enough to examine the forward cycles
+(since $\{ A, B \} = \{ A, B \}$).
+\begin{align*}
+  \{S_x, S_y\} &= S_xS_y + S_yS_x \\
+  &=
+  \frac{i\hbar}{2}S_z - \frac{i\hbar}{2}S_z \\
+  &=
+  0
+\end{align*}
+\begin{align*}
+  \{S_y, S_z\} &= S_yS_z + S_zS_y \\
+  &=
+  \frac{i\hbar}{2}S_x - \frac{i\hbar}{2}S_x \\
+  &=
+  0
+\end{align*}
+\begin{align*}
+  \{S_z, S_x\} &= S_zS_x + S_xS_z \\
+  &=
+  \frac{i\hbar}{2}S_y - \frac{i\hbar}{2}S_y \\
+  &=
+  0
+\end{align*}
+Now examine the forward cycles for the commutator.
+\begin{align*}
+  [S_x, S_y] &= S_xS_y - S_yS_x \\
+  &=
+  \frac{i\hbar}{2}S_z + \frac{i\hbar}{2}S_z \\
+  &= i\hbar S_z
+\end{align*}
+\begin{align*}
+  [S_y, S_z] &= S_yS_z - S_zS_y \\
+  &=
+  \frac{i\hbar}{2}S_x + \frac{i\hbar}{2}S_x \\
+  &=
+  i\hbar S_x
+\end{align*}
+\begin{align*}
+  [S_z, S_x] &= S_zS_x - S_xS_z \\
+  &=
+  \frac{i\hbar}{2}S_y + \frac{i\hbar}{2}S_y \\
+  &=
+  i\hbar S_y
+\end{align*}
+
+For the reverse cycles, use the identity $[A, B] = -[B, A]$ to obtain
+the expected values.

@@ -1,0 +1,143 @@
+Consider a ket space spanned by the eigenkets $\{\ket{a'}\}$ of a
+Hermitian operator $A$.  There is no degeneracy.
+\begin{itemize}
+\item[(a)] Prove that
+  \[\prod_{a'}(A - a')\]
+  is the null operator.
+\item[(b)] Explain the significance of
+  \[\prod_{a''\neq a'}\frac{A - a''}{a' - a''}\]
+\item[(c)] Illustrate using (a) and (b) using $A$ set equal to $S_z$
+  of a spin-$\frac{1}{2}$ system.
+\end{itemize}
+
+(Note: this question can be confusing to some, as the term $A - a'$
+seems to be subtracting a scalar $a'$ from a matrix $A$; this is in
+fact the scalar \emph{operator} $a'$ subtracted from the matrix $A$)
+\subsection*{Solution}
+\begin{itemize}
+\item[(a)]
+Rewrite
+\[ A - a' \]
+as follows:
+\begin{align*}
+  A - a' &= (A - a')\sum_{a''} \outerprod{a''}{a''} \\
+  &= \sum_{a''} (A - a')\outerprod{a''}{a''} \\
+  &= \sum_{a''} (a'' - a')\outerprod{a''}{a''}
+\end{align*}
+Note that when $a'' = a'$, we have $(a'' - a') = 0$, giving us
+\[ \sum_{a''\neq a'} (a'' - a')\outerprod{a''}{a''} \]
+
+Now, taking the entire product gives us
+\[
+\left(\sum_{a''\neq a'_0} (a'' - a'_0)\outerprod{a''}{a''}\right)
+\left(\sum_{a''\neq a'_1} (a'' - a'_1)\outerprod{a''}{a''}\right)
+\]
+\[
+=
+\left(
+\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_0)\outerprod{a''}{a''} +
+(a'_1 - a'_0)\outerprod{a'_1}{a'_1}
+\right)
+\left(
+\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_1)\outerprod{a''}{a''} +
+(a'_0 - a'_1)\outerprod{a'_0}{a'_0}
+\right)
+\]
+\[
+=
+\left(\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_0)\outerprod{a''}{a''}\right)
+\left(\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_1)\outerprod{a''}{a''}\right)
++\left((a'_1 - a'_0)\outerprod{a'_1}{a'_1}\right)
+\left(\sum_{a''\not\in \{a'_0, a'_1\}} A\outerprod{a''}{a''}\right)
+\]
+\[
++
+\left(\sum_{a''\not\in \{a'_0, a'_1\}} A\outerprod{a''}{a''}\right)
+\left((a'_0 - a'_1)\outerprod{a'_0}{a'_0}\right)
++\left((a'_1 - a'_0)\outerprod{a'_1}{a'_1}\right)
+\left((a'_0 - a'_1)\outerprod{a'_0}{a'_0}\right)
+\]
+\[
+=
+\left(\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_0)\outerprod{a''}{a''}\right)
+\left(\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_1)\outerprod{a''}{a''}\right)
+\]
+\[
+=
+\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_0)(a'' - a'_1)
+\ket{a''}\innerprod{a''}{a''}\bra{a''}
+\]
+\[
+=
+\sum_{a''\not\in \{a'_0, a'_1\}} (a'' - a'_0)(a'' - a'_1)\outerprod{a''}{a''}
+\]
+Generalizing this to some $C\subseteq A$, we get
+\[
+\prod_{a' \in C}(A - a')
+=
+\sum_{a''\not\in C} \prod_{a'\in C}(a'' - a')\outerprod{a''}{a''}
+\]
+Then when we set $C = A$, we get the zero operator.
+\item[(b)]
+If we take $C = S - \{ a' \}$ for some $a'$, we have
+\begin{align*}
+  \prod_{a'' \neq a'} (A - a'')
+  &=
+  \prod_{a'' \neq a'}(a' - a'')\outerprod{a'}{a'} \\
+  \frac{\prod_{a'' \neq a'} (A - a'')}{\prod_{a'' \neq a'}(a' - a'')}
+  &=
+  \outerprod{a'}{a'} \\
+  \prod_{a'' \neq a'}\frac{A - a''}{a' - a''}
+\end{align*}
+
+\item[(c)]
+For $S_z = \frac{\hbar}{2}(\outerprod{\plus}{\plus} -
+\outerprod{\minus}{\minus})$, the $S_z$ eigenkets are simply
+$\ket{\plus},\ket{\minus}$, and the eigenvalues are $\pm\frac{\hbar}{2}$.
+
+Start with
+\begin{align*}
+  S_z + \frac{\hbar}{2}
+  &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus})
+  +\frac{\hbar}{2}(\outerprod{\plus}{\plus} + \outerprod{\minus}{\minus}) \\
+  &=
+  \hbar\outerprod{\plus}{\plus}
+\end{align*}
+and then
+\begin{align*}
+  S_z - \frac{\hbar}{2}
+  &=
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} - \outerprod{\minus}{\minus}) -
+  \frac{\hbar}{2}(\outerprod{\plus}{\plus} + \outerprod{\minus}{\minus}) \\
+  &=
+  -\hbar\outerprod{\minus}{\minus}
+\end{align*}
+which gives us
+\begin{align*}
+  (S_z + \frac{\hbar}{2})(S_z - \frac{\hbar}{2}) &=
+  (\hbar\outerprod{\plus}{\plus})(-\hbar\outerprod{\minus}{\minus}) \\
+  &=
+  -\hbar^2\doubleouterprod{\plus}{\plus}{\minus}{\minus} \\
+  &=
+  0
+\end{align*}
+
+Now, we have
+\begin{align*}
+  \frac{S_z + \frac{\hbar}{2}}{\frac{\hbar}{2} - (-\frac{\hbar}{2})}
+  &=
+  \frac{\hbar\outerprod{\plus}{\plus}}{\hbar} \\
+  &=
+  \outerprod{\plus}{\plus}
+\end{align*}
+and
+\begin{align*}
+  \frac{S_z - \frac{\hbar}{2}}{-\frac{\hbar}{2} - \frac{\hbar}{2}}
+  &=
+  \frac{-\hbar\outerprod{\minus}{\minus}}{-\hbar} \\
+  &=
+  \outerprod{\minus}{\minus}
+\end{align*}
+
+\end{itemize}
